@@ -1,30 +1,32 @@
 module.exports = {
   siteMetadata: {
     navbarLinks: [
-      {to: "/makeup", name: "Makeup"},
-      {to: "/lifestyle", name: "Lifestyle"},
-      {to: "/blog", name: "blog"},
+      { to: "/makeup", name: "Makeup" },
+      { to: "/lifestyle", name: "Lifestyle" },
+      { to: "/blog", name: "blog" },
     ],
-    title: "TYRA",
-    description: "Tyra is a fast, feminine, and chic Gatsby.js theme.",
+    title: "Daniela Sohneg",
+    description:
+      "🌿 Diplomierte Kräuterpädagogin aus Kirchbach in der Steiermark. ✨ Kräuterwanderungen in der Südoststeiermark/Weiz/Feldbach/Leibnitz und Umgebung sowie Workshops zur Herstellung von Tinkturen, Naturkosmetik und anderen Kräuterprodukten.",
     siteUrl: "https://tyra-starter.netlify.com",
-    homepageHeader: "Welcome to Your New Blog",
-    homepageAbout: "Tyra is a modern, sleek and feminine Gatsby.js theme. Easily create a beautiful and fast blog and draw attention to your stellar content.",
+    homepageHeader: "Hallo! Mein Name ist Daniela Sohneg.",
+    homepageAbout:
+      "Aus privaten Vorlieben entstehen bekanntlich die leidenschaftlichsten Berufungen. Ich bin Diplomierte Kräuterpädagogin und Aromapraktikerin aus Kirchbach in der Steiermark.",
     mailChimpUrl: "https://mailchimp.com",
     mailChimpToken: "MAILCHIMP TOKEN HERE",
     youtube: "", // YOUR YOUTUBE PROFILE HERE
-    github: "", // YOUR GITHUB PROFILE HERE 
+    github: "", // YOUR GITHUB PROFILE HERE
     pinterest: "", // YOUR PINTEREST PROFILE HERE
-    facebook: "", // YOUR FACEBOOK PROFILE HERE
+    facebook: "https://www.facebook.com/daniela.sohneg",
     twitter: "", // YOUR TWITTER PROFILE HERE
   },
   plugins: [
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-plugin-feed',
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
         {
@@ -41,15 +43,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
+                });
+              });
             },
             query: `
             {
@@ -79,44 +81,44 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content`,
-        name: 'content',
+        name: "content",
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-remark-copy-linked-files',
+          "gatsby-remark-copy-linked-files",
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 1400,
             },
           },
         ],
-      }
+      },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Karla', 'Playfair Display', 'Lora']
-        }
-      }
+          families: ["Karla", "Playfair Display", "Lora"],
+        },
+      },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "",
         head: false,
         anonymize: true,
         respectDNT: true,
-        exclude: ['/success'],
+        exclude: ["/success"],
         cookieDomain: "tyra-starter.netlify.com",
-      }
-    }
-  ]
-}
+      },
+    },
+  ],
+};
