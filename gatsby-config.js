@@ -14,10 +14,11 @@ module.exports = {
       "Aus privaten Vorlieben entstehen bekanntlich die leidenschaftlichsten Berufungen. Ich bin Diplomierte Kräuterpädagogin und Aromapraktikerin aus Kirchbach in der Steiermark.",
     mailChimpUrl: "https://mailchimp.com",
     mailChimpToken: "MAILCHIMP TOKEN HERE",
+    instagram: "https://www.instagram.com/danielasohneg/",
+    facebook: "https://www.facebook.com/daniela.sohneg",
     youtube: "", // YOUR YOUTUBE PROFILE HERE
     github: "", // YOUR GITHUB PROFILE HERE
     pinterest: "", // YOUR PINTEREST PROFILE HERE
-    facebook: "https://www.facebook.com/daniela.sohneg",
     twitter: "", // YOUR TWITTER PROFILE HERE
   },
   plugins: [
