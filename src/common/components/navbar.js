@@ -95,8 +95,8 @@ export default class Navbar extends React.Component {
       render={data => (
         <React.Fragment>
           <div
-            className="bg-white flex w-100 vh-9 pv3 ph3 flex justify-between items-center top-0 z-999 bb b--light-gray"
-            style={{position: "sticky"}}>
+            className="bg-white flex w-100 flex justify-between items-center top-0 z-999 bb b--light-gray"
+            style={{position: "sticky", height: "60px"}}>
             <div className="w-100 mw8 flex justify-between justify-around-l items-center ph4 pa2-ns">
               <button
                 className="ttu tracked dark-gray f4 no-underline bn bg-transparent pointer"

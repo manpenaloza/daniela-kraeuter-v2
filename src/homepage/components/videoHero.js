@@ -19,18 +19,7 @@ export default ({ videoSrc, children }) => {
       <div className="absolute videoContainer">
         <video src={videoSrc} autoPlay muted loop ref={videoElement}/>
       </div>
-      <section
-        className="flex items-center justify-center"
-        style={{
-          zIndex: 2,
-          textAlign: "center",
-          width: "96%",
-          height: "93%",
-          backgroundColor: "rgba(255,255,255,.7)",
-        }}
-      >
-        {children}
-      </section>
+      {children}
     </div>
   );
 };

@@ -102,7 +102,7 @@
 
 /* Homepage Styles */
 .videoHeroContainer {
-  height: calc(100vh - 9vh); /* which equals the viewport height minus the nav hight */
+  height: calc(100vh - 60px); /* which equals the viewport height minus the nav height  */
 }
 
 .videoContainer {

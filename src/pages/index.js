@@ -18,41 +18,57 @@ export default ({ data }) => {
         description={data.site.siteMetadata.description}
       />
       <VideoHero videoSrc="./kraeuterwanderung.mp4">
-        <div
-          className="videoContainerGrid"
-          style={{ maxWidth: "1200px", textAlign: "initial" }}
+        <section
+          className="flex items-center justify-center"
+          style={{
+            zIndex: 2,
+            textAlign: "center",
+            width: "96%",
+            height: "93%",
+          }}
         >
-          <div className="textBoxInnerSpacing flex flex-column justify-center">
-            <span className="f3 f1-ns color-primary-violett b">
-            Hallo! Ich bin
-            </span>
-            <h1 className="f3 f1-ns color-primary-violett" style={{ marginTop: "initial"}}>DANIELA SOHNEG.</h1>
-            <h3 className="f2 f3-ns sans-serif mid-gray">
-              Dipl. Kräuterpädagogin & Aromapraktikerin
-            </h3>
-            <div className="flex flex-row items-center justify-around pv3">
-              <Link
-                className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
-                to="/"
+          <div
+            className="videoContainerGrid"
+            style={{ maxWidth: "1200px", textAlign: "initial" }}
+          >
+            <div className="textBoxInnerSpacing flex flex-column justify-center">
+              <h1
+                className="f3 f1-ns white serif"
+                style={{
+                  marginTop: "initial",
+                  marginBottom: "initial",
+                  fontSize: "5em ",
+                }}
               >
-                Über mich
-              </Link>
-              <Link
-                className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
-                to="/"
-              >
-                Meine Themen
-              </Link>
+                DANIELA SOHNEG
+              </h1>
+              <h3 className="f2 f3-ns sans-serif white">
+                Dipl. Kräuterpädagogin & Aromapraktikerin
+              </h3>
+              <div className="flex flex-row items-center justify-between pv3">
+                <Link
+                  className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
+                  to="/"
+                >
+                  Über mich
+                </Link>
+                <Link
+                  className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
+                  to="/"
+                >
+                  Meine Themen
+                </Link>
+              </div>
+            </div>
+            <div>
+              <Img
+                className="w-80 mw6 h-80"
+                alt="Daniela Sohneg Logo"
+                fluid={data.logo.childImageSharp.fluid}
+              />
             </div>
           </div>
-          <div>
-            <Img
-              className="w-80 mw6 h-80"
-              alt="Daniela Sohneg Logo"
-              fluid={data.logo.childImageSharp.fluid}
-            />
-          </div>
-        </div>
+        </section>
       </VideoHero>
       <Hero
         title={post.frontmatter.title}
