@@ -121,5 +121,6 @@ module.exports = {
         cookieDomain: "tyra-starter.netlify.com",
       },
     },
+    'gatsby-plugin-postcss'
   ],
 };

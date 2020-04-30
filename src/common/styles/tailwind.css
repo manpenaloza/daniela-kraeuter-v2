@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-violett: rgba(182,0,100);
+  --primary-green: rgba(77, 146, 22);
+}

@@ -33,27 +33,26 @@ export default ({ data }) => {
           >
             <div className="textBoxInnerSpacing flex flex-column justify-center">
               <h1
-                className="f3 f1-ns white serif"
+                className="text-4xl md:text-6xl lg:text-8xl white font-serif font-bold leading-none"
                 style={{
                   marginTop: "initial",
                   marginBottom: "initial",
-                  fontSize: "5em ",
                 }}
               >
                 DANIELA SOHNEG
               </h1>
-              <h3 className="f2 f3-ns sans-serif white">
+              <h3 className="text-xl lg:text-2xl sans-serif white my-4">
                 Dipl. Kräuterpädagogin & Aromapraktikerin
               </h3>
-              <div className="flex flex-row items-center justify-between pv3">
+              <div className="flex flex-column lg:flex-row items-center justify-between py-5">
                 <Link
-                  className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
+                  className="mb-8 lg:mb-0 py-5 px-16 font-bold hover:shadow-md uppercase bg-violett white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100"
                   to="/"
                 >
                   Über mich
                 </Link>
                 <Link
-                  className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray"
+                  className="py-5 px-16 font-bold hover:shadow-md uppercase bg-violett white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100"
                   to="/"
                 >
                   Meine Themen
@@ -62,7 +61,7 @@ export default ({ data }) => {
             </div>
             <div>
               <Img
-                className="w-80 mw6 h-80"
+                className="w-3/6 lg:w-9/12 opacity-85 center"
                 alt="Daniela Sohneg Logo"
                 fluid={data.logo.childImageSharp.fluid}
               />

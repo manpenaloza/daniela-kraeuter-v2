@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import Navbar from '../components/navbar.js';
 import Footer from '../components/footer.js';
 import 'tachyons';
+import '../styles/tailwind.css';
 import '../styles/custom.tachyons.css';
 
 
