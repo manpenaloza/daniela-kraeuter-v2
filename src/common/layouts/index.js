@@ -15,7 +15,9 @@ export default (props) => (
     <Fade>
       <Navbar />
     </Fade>
+    <div className="serif leading-loose text-lg">
     {props.children}
+    </div>
     <Footer />
   </React.Fragment>
 );

@@ -5,7 +5,7 @@ import 'tachyons'
 
 
 export default () => (
-  <div className="py-20 flex flex-wrap center justify-around items-center">
+  <div className="container flex flex-wrap center justify-around items-center">
     <StaticQuery
       query={graphql`
         query {

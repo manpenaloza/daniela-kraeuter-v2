@@ -7,10 +7,8 @@ module.exports = {
       xl: "1280px",
     },
     fontFamily: {
-      "sans-serif": ["Karla", "-apple-system", "BlinkMacSystemFont"],
-      serif: ["Lora", "Georgia", "Cambria"],
-      body: ["Karla", "sans-serif"],
-      display: ["Lora", "serif"],
+      "sans-serif": ["Karla", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      serif: ["Lora", "Georgia", "Cambria", "serif"],
     },
     colors: {
       green: "rgb(77 146 22)",
@@ -21,6 +19,14 @@ module.exports = {
       "0": "0",
       "2": "2px",
       "4": "4px",
+    },
+    container: {
+      center: true,
+      padding: {
+        default: '1rem',
+        lg: '2rem',
+        xl: '3rem',
+      },
     },
     extend: {
       spacing: {

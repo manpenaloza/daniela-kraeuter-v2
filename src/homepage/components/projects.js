@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 import Img from "gatsby-image";
 
 export default () => (
-  <div className="py-20 flex flex-row justify-around items-start center">
+  <div className="py-20 container flex flex-row justify-around items-start center">
     <StaticQuery
       query={graphql`
         query {
@@ -47,7 +47,7 @@ export default () => (
         const { aboutMe, profile } = data.contentfulAbout;
 
         return (
-          <div className="flex flex-row items-center flex-wrap">
+          <React.Fragment>
             <div className="flex-1">
               <Fade bottom>
                 <ReactMarkdown
@@ -57,14 +57,14 @@ export default () => (
               </Fade>
             </div>
 
-            <div className="center flex-1 lg:flex-shrink">
+            <div className="center lg:w-1/4">
               <Fade right>
                 <Pulse duration={3000} forever>
                   {/* <LogoSymbol heightPx={200} widthPx={200} /> */}
                 </Pulse>
               </Fade>
             </div>
-          </div>
+          </React.Fragment>
         );
       }}
     />
