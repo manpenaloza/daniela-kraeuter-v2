@@ -3,8 +3,8 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     navbarLinks: [
-      { to: "/makeup", name: "Makeup" },
-      { to: "/lifestyle", name: "Lifestyle" },
+      { scrollToId: "me", name: "Über mich" },
+      { scrollToId: "projects", name: "Projekte & Aktuelles" },
       { to: "/blog", name: "blog" },
     ],
     title: "Daniela Sohneg",

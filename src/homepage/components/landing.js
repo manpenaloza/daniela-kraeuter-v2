@@ -2,6 +2,8 @@ import React from "react";
 import { graphql, Link, StaticQuery } from "gatsby";
 import Slide from "react-reveal/Slide";
 import Img from "gatsby-image";
+import { SectionLink } from "react-scroll-section";
+import Button from "../../common/components/button";
 
 export default () => {
   return (
@@ -44,22 +46,20 @@ export default () => {
                 >
                   {data.contentfulAbout.name}
                 </h1>
-                <h3 className="text-xl lg:text-2xl sans-serif white my-4">
+                <h3 className="text-xl lg:text-2xl sans-serif white my-4 text-shadow">
                   Dipl. Kräuterpädagogin & Aromapraktikerin
                 </h3>
                 <div className="flex flex-column lg:flex-row items-center justify-between py-5">
-                  <Link
-                    className="mb-8 lg:mb-0 py-5 px-16 font-bold hover:shadow-md uppercase bg-violett white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100 rounded-lg"
-                    to="/"
-                  >
-                    Über mich
-                  </Link>
-                  <Link
-                    className="py-5 px-16 font-bold hover:shadow-md uppercase bg-violett white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100 rounded-lg"
-                    to="/"
-                  >
-                    Meine Themen
-                  </Link>
+                  <SectionLink section="me">
+                    {({ onClick }) => (
+                      <Button.PrimaryWithPageScroll onClick={onClick}>Über mich</Button.PrimaryWithPageScroll>
+                    )}
+                  </SectionLink>
+                  <SectionLink section="projects">
+                    {({ onClick }) => (
+                      <Button.PrimaryWithPageScroll onClick={onClick}>Tätigkeiten</Button.PrimaryWithPageScroll>
+                    )}
+                  </SectionLink>
                 </div>
               </Slide>
             </div>

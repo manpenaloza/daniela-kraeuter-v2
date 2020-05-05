@@ -5,10 +5,12 @@ import Hero from "../homepage/components/teaser";
 import Card from "../homepage/components/card";
 import About from "../homepage/components/about";
 import Bio from "../homepage/components/bio";
-import Projects from "../homepage/components/me";
+import Me from "../homepage/components/me";
+import Projects from "../homepage/components/projects";
 import Seo from "../common/seo";
 import VideoHero from "../homepage/components/videoHero";
 import Landing from '../homepage/components/landing';
+import Education from "../homepage/components/education";
 
 export default ({ data }) => {
   let post = data.featuredPost.edges[0].node;
@@ -21,14 +23,14 @@ export default ({ data }) => {
       <VideoHero videoSrc="./kraeuterwanderung.mp4">
         <Landing />
       </VideoHero>
-      <Projects />
-      <Bio />
+      <Me />
       <Hero
         title={post.frontmatter.title}
         image={post.frontmatter.postImage.childImageSharp.fluid}
         to={post.frontmatter.slug}
         description={post.frontmatter.description}
       />
+      <Projects />
       <div className="flex flex-wrap center mw9 justify-around pb3">
         {data.cards.edges.map(({ node }) => (
           <Card
@@ -39,6 +41,8 @@ export default ({ data }) => {
           />
         ))}
       </div>
+      <Bio />
+      <Education />
       <About />
     </Layout>
   );

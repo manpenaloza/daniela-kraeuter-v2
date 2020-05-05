@@ -7,6 +7,7 @@
 :root {
   --primary-violett: rgba(182,0,100);
   --primary-green: rgba(77, 146, 22);
+  --primary-gray: #555;
 }
 
 .copyright:before {
@@ -29,6 +30,22 @@
   content: ".";
   color: var(--primary-violett);
   display: inline-block;
+}
+
+.text-shadow-gray {
+  text-shadow: 1px 1px var(--primary-gray);
+}
+
+.text-shadow-violett {
+  text-shadow: 1px 1px var(--primary-violett);
+}
+
+.hover\:text-shadow-gray:hover {
+  text-shadow: 1px 1px var(--primary-gray);
+}
+
+.hover\:text-shadow-violett:hover {
+  text-shadow: 1px 1px var(--primary-violett);
 }
 
 .copyright {

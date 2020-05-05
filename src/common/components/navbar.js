@@ -2,25 +2,37 @@ import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 import Img from "gatsby-image";
+import { SectionLink } from "react-scroll-section";
 import "../styles/custom.tachyons.css";
 
 const MultiLink = (props) => {
   const internal = /^\/(?!\/)/.test(props.to);
-  let result;
-  if (internal) {
-    result = (
+  const scrollable = props.scrollToId;
+  console.log(props)
+
+  if (internal)
+    return (
       <Link to={props.to} className={props.className}>
         {props.children}
       </Link>
     );
-  } else {
-    result = (
-      <a href={props.to} className={props.className}>
-        {props.children}
-      </a>
+
+  if (scrollable)
+    return (
+      <SectionLink section={props.scrollToId}>
+        {({ onClick }) => (
+          <a onClick={onClick} className={props.className}>
+            {props.children}
+          </a>
+        )}
+      </SectionLink>
     );
-  }
-  return result;
+
+  return (
+    <a href={props.to} className={props.className}>
+      {props.children}
+    </a>
+  );
 };
 
 const SliderMenu = (props) => {
@@ -47,6 +59,7 @@ const SliderMenu = (props) => {
       >
         {props.siteTitle}
       </Link>
+
       {props.extraLinks.map((navLink) => (
         <MultiLink
           to={navLink.to}
@@ -57,8 +70,9 @@ const SliderMenu = (props) => {
           {navLink.name}
         </MultiLink>
       ))}
+
       <Link
-        to="/about"
+        scrollToId="me"
         className={
           "sans-serif ttu white f4 no-underline menu__item pv3" + extraClasses
         }
@@ -102,6 +116,7 @@ export default class Navbar extends React.Component {
               siteMetadata {
                 navbarLinks {
                   to
+                  scrollToId
                   name
                 }
                 siteTitle: title
@@ -130,12 +145,12 @@ export default class Navbar extends React.Component {
                     fixed={data.logo.childImageSharp.fixed}
                   />
                 </Link>
-                {data.site.siteMetadata.navbarLinks.map((navLink) => (
+                {data.site.siteMetadata.navbarLinks.map(({ name, ...props}) => (console.log(props),
                   <MultiLink
-                    to={navLink.to}
-                    className="sans-serif ttu mid-gray f5 no-underline dn dib-l"
+                    {...props}
+                    className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover:text-shadow-violett"
                   >
-                    {navLink.name}
+                    {name}
                   </MultiLink>
                 ))}
               </div>
@@ -144,15 +159,15 @@ export default class Navbar extends React.Component {
                   href={data.site.siteMetadata.mailChimpUrl}
                   className="sans-serif ttu color-primary-violett f5 no-underline dn dib-l"
                 >
-                  Newsletter
+                  Kontakt
                 </a>
-                <span className="sans-serif mid-gray dn dib-l">|</span>
-                <Link
+                {/* <span className="sans-serif mid-gray dn dib-l">|</span> */}
+                {/* <Link
                   to="/about"
                   className="sans-serif ttu mid-gray f5 no-underline dn dib-l"
                 >
-                  Über mich
-                </Link>
+                  Newsletter
+                </Link> */}
               </div>
             </div>
             <SliderMenu

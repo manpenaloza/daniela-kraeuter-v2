@@ -140,10 +140,9 @@ export default () => (
             </a>
           </div>
         </div>
-        <div className="w-100 mw9 silver center sans-serif f6">
+        <div className="w-100 mw9 silver text-center sans-serif f6">
           <p>
-            Tyra Theme (C) 2018 by Madelyn Eriksen under terms of the "MIT"
-            software license.
+            Development: Manuel Penaloza (C) 2020
           </p>
         </div>
       </footer>
