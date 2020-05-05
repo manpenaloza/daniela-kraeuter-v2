@@ -60,14 +60,14 @@ const SliderMenu = (props) => {
         {props.siteTitle}
       </Link>
 
-      {props.extraLinks.map((navLink) => (
+      {props.extraLinks.map(({ name, ...props}) => (
         <MultiLink
-          to={navLink.to}
+          {...props}
           className={
             "sans-serif ttu white f4 no-underline menu__item pv3" + extraClasses
           }
         >
-          {navLink.name}
+          {name}
         </MultiLink>
       ))}
 
