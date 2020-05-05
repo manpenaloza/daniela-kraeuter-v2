@@ -4,6 +4,7 @@ import Fade from "react-reveal/Fade";
 import Pulse from 'react-reveal/Pulse';
 import ReactMarkdown from "react-markdown";
 import Img from "gatsby-image";
+import Headline from "../../common/components/headline"
 
 export default () => (
   <div className="py-20 container flex flex-row justify-around items-start center">
@@ -50,6 +51,7 @@ export default () => (
           <React.Fragment>
             <div className="flex-1">
               <Fade bottom>
+                <Headline Type="h2" tailwindColorClassname="text-violett">Über mich</Headline>
                 <ReactMarkdown
                   source={aboutMe.childMarkdownRemark.rawMarkdownBody}
                   // renderers={markdownRenderer}

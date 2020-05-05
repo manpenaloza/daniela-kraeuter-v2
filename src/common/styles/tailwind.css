@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NON TAILWIND STYLES */
+
 :root {
   --primary-violett: rgba(182,0,100);
   --primary-green: rgba(77, 146, 22);
 }
+
+.copyright:before {
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+  margin-right: 15px;
+  height: 1px;
+  width: 25px;
+  background: white;
+} 
+
+.main-headline-dot-green:after {
+  content: ".";
+  color: var(--primary-green);
+  display: inline-block;
+}
+
+.main-headline-dot-violett:after {
+  content: ".";
+  color: var(--primary-violett);
+  display: inline-block;
+}
+
+.copyright {
+  bottom: 80px;
+  left: 55px;
+  transform: rotate(-90deg);
+};
