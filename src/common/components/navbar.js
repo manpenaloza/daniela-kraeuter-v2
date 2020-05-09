@@ -1,39 +1,10 @@
 import React from "react";
-import { StaticQuery, graphql, Link } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 import Img from "gatsby-image";
 import { SectionLink } from "react-scroll-section";
 import "../styles/custom.tachyons.css";
-
-const MultiLink = (props) => {
-  const internal = /^\/(?!\/)/.test(props.to);
-  const scrollable = props.scrollToId;
-  console.log(props)
-
-  if (internal)
-    return (
-      <Link to={props.to} className={props.className}>
-        {props.children}
-      </Link>
-    );
-
-  if (scrollable)
-    return (
-      <SectionLink section={props.scrollToId}>
-        {({ onClick }) => (
-          <a onClick={onClick} className={props.className}>
-            {props.children}
-          </a>
-        )}
-      </SectionLink>
-    );
-
-  return (
-    <a href={props.to} className={props.className}>
-      {props.children}
-    </a>
-  );
-};
+import MultiLink from "gatsby-universal-link";
 
 const SliderMenu = (props) => {
   // Prevents a flash of visible menu items when the entrance is triggered
@@ -50,7 +21,7 @@ const SliderMenu = (props) => {
         (props.active ? " vh-93" : " h0")
       }
     >
-      <Link
+      <MultiLink
         to="/"
         className={
           "display ttu tracked white f2 no-underline menu__item pv5" +
@@ -58,9 +29,9 @@ const SliderMenu = (props) => {
         }
       >
         {props.siteTitle}
-      </Link>
+      </MultiLink>
 
-      {props.extraLinks.map(({ name, ...props}) => (
+      {props.extraLinks.map(({ name, ...props }) => (
         <MultiLink
           {...props}
           className={
@@ -71,14 +42,14 @@ const SliderMenu = (props) => {
         </MultiLink>
       ))}
 
-      <Link
+      <MultiLink
         scrollToId="me"
         className={
           "sans-serif ttu white f4 no-underline menu__item pv3" + extraClasses
         }
       >
         About
-      </Link>
+      </MultiLink>
     </div>
   );
 };
@@ -138,29 +109,31 @@ export default class Navbar extends React.Component {
                 >
                   <FiMenu />
                 </button>
-                <Link to="/">
+                <MultiLink to="/" className="cursor-pointer">
                   <Img
                     className=""
                     alt=""
                     fixed={data.logo.childImageSharp.fixed}
                   />
-                </Link>
-                {data.site.siteMetadata.navbarLinks.map(({ name, ...props}) => (console.log(props),
-                  <MultiLink
-                    {...props}
-                    className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover:text-shadow-violett"
-                  >
-                    {name}
-                  </MultiLink>
-                ))}
+                </MultiLink>
+                {data.site.siteMetadata.navbarLinks.map(
+                  ({ name, ...props }) => (
+                    <MultiLink
+                      {...props}
+                      className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover:text-shadow-violett cursor-pointer"
+                    >
+                      {name}
+                    </MultiLink>
+                  )
+                )}
               </div>
               <div className="dn w-100 mw5 flex-l justify-around items-center">
-                <a
-                  href={data.site.siteMetadata.mailChimpUrl}
-                  className="sans-serif ttu color-primary-violett f5 no-underline dn dib-l"
+                <MultiLink
+                  to={data.site.siteMetadata.mailChimpUrl}
+                  className="sans-serif ttu color-primary-violett f5 no-underline dn dib-l cursor-pointer"
                 >
                   Kontakt
-                </a>
+                </MultiLink>
                 {/* <span className="sans-serif mid-gray dn dib-l">|</span> */}
                 {/* <Link
                   to="/about"
