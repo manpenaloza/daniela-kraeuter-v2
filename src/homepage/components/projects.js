@@ -1,9 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Fade from "react-reveal/Fade";
-import Pulse from "react-reveal/Pulse";
 import ReactMarkdown from "react-markdown";
-import Img from "gatsby-image";
 import { Section } from "react-scroll-section";
 import Headline from "../../common/components/headline";
 import markdownRenderer from "../../common/components/markdownRenderer";

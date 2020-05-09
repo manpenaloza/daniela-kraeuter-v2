@@ -1,6 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import Img from "gatsby-image";
-import { Link } from "gatsby";
 import "../../common/styles/custom.tachyons.css";
 import "tachyons";
 

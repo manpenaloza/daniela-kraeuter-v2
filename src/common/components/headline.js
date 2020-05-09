@@ -6,7 +6,7 @@ export default ({
   tailwindColorClassname = "text-violett",
 }) => {
   const dotClassname = `main-headline-dot-${
-    tailwindColorClassname == "text-violett" ? "green" : "violett"
+    tailwindColorClassname === "text-violett" ? "green" : "violett"
   }`;
   return (
     <React.Fragment>

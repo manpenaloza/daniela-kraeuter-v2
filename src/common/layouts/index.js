@@ -1,8 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Fade from "react-reveal/Fade";
-import Slide from "react-reveal/Slide";
-import { ScrollingProvider, SectionLink, Section } from "react-scroll-section";
+import { ScrollingProvider } from "react-scroll-section";
 import Navbar from "../components/navbar.js";
 import Footer from "../components/footer.js";
 import "tachyons";

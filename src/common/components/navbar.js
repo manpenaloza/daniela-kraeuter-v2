@@ -2,7 +2,6 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 import Img from "gatsby-image";
-import { SectionLink } from "react-scroll-section";
 import "../styles/custom.tachyons.css";
 import MultiLink from "gatsby-universal-link";
 
