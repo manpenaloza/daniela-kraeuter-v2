@@ -2,8 +2,6 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import Fade from "react-reveal/Fade";
-import Pulse from "react-reveal/Pulse";
-import ReactMarkdown from "react-markdown";
 import { Section } from "react-scroll-section";
 import MultiLink from "gatsby-universal-link";
 import Headline from "../../common/components/headline";
@@ -12,8 +10,6 @@ import {
   ListItem,
   UnorderedList,
 } from "../../common/components/typography";
-import markdownRenderer from "../../common/components/markdownRenderer";
-import Button from "../../common/components/button";
 
 export default () => (
   <Section id="education" className="min-h-screen py-20 container">
