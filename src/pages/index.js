@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import Teaser from "../homepage/components/teaser";
 import Card from "../homepage/components/card";
 import About from "../homepage/components/about";
-import Bio from "../homepage/components/bio";
 import Me from "../homepage/components/me";
 import Projects from "../homepage/components/projects";
 import Seo from "../common/seo";
@@ -30,7 +29,6 @@ export default ({ data }) => {
         to={data.featuredPost.slug}
         description="description statically texted"
       />
-      <Projects />
       <div className="flex flex-row flex-wrap justify-around">
         {data.cards.edges.map(({ node }) => (
           <Card
@@ -41,7 +39,7 @@ export default ({ data }) => {
           />
         ))}
       </div>
-      <Bio />
+      <Projects />
       <Education />
       <About />
     </Layout>

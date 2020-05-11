@@ -7,6 +7,7 @@ import Img from "gatsby-image";
 import { Section } from "react-scroll-section";
 import Headline from "../../common/components/headline";
 import markdownRenderer from "../../common/components/markdownRenderer";
+import MultiLink from "gatsby-universal-link";
 
 export default () => (
   <StaticQuery
@@ -59,6 +60,7 @@ export default () => (
                       }
                       renderers={markdownRenderer}
                     />
+                    <MultiLink to="/about/" className="underline text-green font-sans-serif font-bold tracking-widest mt-5 block">Mehr Infos (Fotos, Diplomarbeit, etc.)</MultiLink>
                   </div>
                 </div>
               </div>

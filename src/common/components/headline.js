@@ -1,4 +1,5 @@
 import React from "react";
+import Fade from "react-reveal/Fade"
 
 export default ({
   children,
@@ -15,7 +16,9 @@ export default ({
       >
         {children}
       </Type>
-      <span className="block my-8 w-1/6 h-1 bg-green"></span>
+      <Fade right big>
+        <span className="block my-8 w-1/6 h-1 bg-green"></span>
+      </Fade>
     </React.Fragment>
   );
 };

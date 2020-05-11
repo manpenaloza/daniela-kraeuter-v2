@@ -51,11 +51,8 @@ export default () => (
                         fluid={education.logo.fluid}
                         objectFit="contain"
                         objectPosition="50% 50%"
-                        className="lg:w-1/2 m-auto my-16"
+                        className="lg:w-1/2 m-auto my-16 education-institute-logos grayscale-filter hover:no-grayscale-filter transition-all duration-100 ease-in-out"
                         alt={`Logo ${education.name} - Ausbildung von Daniela Sohneg`}
-                        style={{
-                          filter: "grayscale(100%)"
-                        }}
                       />
                     <Paragraph>{education.description}</Paragraph>
                     <div className="font-sans-serif mt-8 bg-green text-near-white p-4 rounded-lg">

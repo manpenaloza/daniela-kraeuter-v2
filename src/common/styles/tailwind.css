@@ -48,6 +48,16 @@
   text-shadow: 1px 1px var(--primary-violett);
 }
 
+.hover\:no-grayscale-filter:hover {
+  filter: grayscale(0%);
+}
+
+.grayscale-filter {
+  filter: grayscale(100%)
+}
+
+
+
 /* video hero overlay to get some decent green color filter layed over the video */
 .videoContainer::after {
   content: '';

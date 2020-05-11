@@ -1,10 +1,12 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
+import useIsScrolled from "use-is-scrolled";
 import Slide from "react-reveal/Slide";
 import Img from "gatsby-image";
 import Button from "../../common/components/button";
 
 export default () => {
+  const isScrolled = useIsScrolled();
   return (
     <StaticQuery
       query={graphql`
@@ -64,6 +66,13 @@ export default () => {
               </Slide>
             </div>
           </div>
+          {!isScrolled && (
+            <small
+              className={`hidden copyright xl:block fixed origin-bottom-left text-near-white text-sm font-sans-serif`}
+            >
+              © Daniela Sohneg | 2020
+            </small>
+          )}
         </section>
       )}
     />
