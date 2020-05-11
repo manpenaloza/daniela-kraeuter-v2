@@ -58,7 +58,7 @@ export default () => (
                         }}
                       />
                     <Paragraph>{education.description}</Paragraph>
-                    <div className="font-sans-serif mt-8 bg-green white p-4 rounded-lg">
+                    <div className="font-sans-serif mt-8 bg-green text-near-white p-4 rounded-lg">
                       <span className="text-2xl font-bold">Schwerpunkte:</span>
                       <UnorderedList>
                         {education.mainEmphasis.map((emphasis) => (

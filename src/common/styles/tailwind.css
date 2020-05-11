@@ -53,3 +53,15 @@
   left: 55px;
   transform: rotate(-90deg);
 };
+
+/* video hero overlay to get some decent green color filter layed over the video */
+.videoContainer::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+	background: rgba(57, 135, 0, 0.3);
+}

@@ -31,13 +31,12 @@ export default () => {
           }}
         >
           <div
-            className="videoContainerGrid"
-            style={{ maxWidth: "1200px", textAlign: "initial" }}
+            className="max-w-screen-xl text-left md:grid grid-cols-2"
           >
-            <div className="textBoxInnerSpacing flex flex-column justify-center">
+            <div className="textBoxInnerSpacing flex flex-column justify-center text-near-white">
               <Slide left>
                 <h1
-                  className="uppercase text-4xl md:text-6xl lg:text-8xl white font-serif font-bold leading-none"
+                  className="uppercase text-4xl md:text-6xl lg:text-8xl font-serif font-bold leading-none"
                   style={{
                     marginTop: "initial",
                     marginBottom: "initial",
@@ -45,12 +44,12 @@ export default () => {
                 >
                   {data.contentfulAbout.name}
                 </h1>
-                <h3 className="text-lg lg:text-xl sans-serif white my-4 text-shadow">
+                <h3 className="text-lg lg:text-xl sans-serif my-4 text-shadow">
                   Dipl. Kräuterpädagogin & Aromapraktikerin
                 </h3>
                 <div className="flex flex-column lg:flex-row items-center justify-between py-5">
                   <Button.PrimaryWithPageScroll scrollToId="me">Über mich</Button.PrimaryWithPageScroll>
-                  <Button.PrimaryWithPageScroll scrollToId="projects">Tätigkeiten</Button.PrimaryWithPageScroll>
+                  <Button.PrimaryWithPageScroll scrollToId="projects" classNames="mt-5 lg:mt-0">Tätigkeiten</Button.PrimaryWithPageScroll>
                 </div>
               </Slide>
             </div>

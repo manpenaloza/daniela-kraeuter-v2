@@ -1,21 +1,27 @@
 import React, { useRef, useEffect } from "react";
-import "../../common/styles/custom.tachyons.css";
-import "tachyons";
 
 export default ({ videoSrc, children }) => {
   const videoElement = useRef(null);
 
-  useEffect(() => {
-    // videoElement.current.playbackRate = .5;
-  }, [])
+  // useEffect(() => {
+  //   videoElement.current.playbackRate = .5;
+  // }, [])
 
   return (
     <div
-      className="vw-100 center relative videoHeroContainer flex items-center justify-center serif"
-      style={{ color: "#fff" }}
+      className="videoHeroContainer text-near-white w-100 relative flex items-center justify-center font-serif"
+      /* upcoming inline style: equals the viewport height minus the navbar height  */
+      style={{ height: "calc(100vh - 60px)" }}
     >
-      <div className="absolute videoContainer">
-        <video src={videoSrc} autoPlay muted loop ref={videoElement}/>
+      <div className="absolute top-0 left-0 w-100 h-100 overflow-hidden bg-green bg-center bg-cover bg-no-repeat videoContainer">
+        <video
+          className="min-w-full min-h-full absolute top-1/2 left-1/2 object-cover transform -translate-y-1/2 -translate-x-1/2"
+          src={videoSrc}
+          autoPlay
+          muted
+          loop
+          ref={videoElement}
+        />
       </div>
       {children}
     </div>

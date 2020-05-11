@@ -14,9 +14,9 @@ export default (props) => (
     </Helmet>
     <ScrollingProvider>
       <Navbar />
-      <div className="serif leading-loose text-lg">
+      <div className="font-serif leading-loose text-base text-mid-gray">
         {props.children}
-        <small className="hidden lg:block copyright fixed origin-bottom-left white text-sm sans-serif">
+        <small className="copyright hidden lg:block fixed origin-bottom-left text-near-white text-sm font-sans-serif">
           © Daniela Sohneg | 2020
         </small>
       </div>

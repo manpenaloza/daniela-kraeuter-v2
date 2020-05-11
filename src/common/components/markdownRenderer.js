@@ -2,7 +2,7 @@ import React from "react";
 import MultiLink from "gatsby-universal-link";
 
 const StyledMarkdownParagraph = ({ children }) => (
-  <p className="text-lg">{children}</p>
+  <p className="text-base">{children}</p>
 );
 
 const StyledMarkdownList = ({ children }) => {

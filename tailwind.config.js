@@ -7,14 +7,21 @@ module.exports = {
       xl: "1280px",
     },
     fontFamily: {
-      "sans-serif": ["Karla", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      "sans-serif": [
+        "Karla",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "sans-serif",
+      ],
       serif: ["Lora", "Georgia", "Cambria", "serif"],
     },
     colors: {
       green: "rgb(77 146 22)",
       violett: "rgb(182 0 100)",
       "near-white": "#f4f4f4",
-      gray: "#333",
+      "dark-gray": "#333",
+      "mid-gray": "#555",
+      silver: "#999",
     },
     borderWidth: {
       default: "1px",
@@ -25,9 +32,9 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        default: '1rem',
-        lg: '2rem',
-        xl: '3rem',
+        default: "1rem",
+        lg: "2rem",
+        xl: "3rem",
       },
     },
     extend: {
@@ -36,6 +43,7 @@ module.exports = {
         "128": "32rem",
       },
       opacity: {
+        "10": ".1",
         "85": "0.85",
         "90": "0.9",
       },
@@ -44,11 +52,14 @@ module.exports = {
         "8xl": "6.2rem",
       },
       scale: {
-        "97": ".97"
+        "97": ".97",
       },
       height: {
-        half: "50vh"
-      }
+        half: "50vh",
+      },
+      inset: {
+        "1/2": "50%",
+      },
     },
   },
   variants: {

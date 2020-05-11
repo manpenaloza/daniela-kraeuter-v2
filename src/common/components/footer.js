@@ -8,6 +8,7 @@ import {
   FaGithub,
   FaInstagram,
 } from "react-icons/fa";
+import MultiLink from "gatsby-universal-link";
 import "tachyons";
 
 export default () => (
@@ -29,120 +30,103 @@ export default () => (
       }
     `}
     render={(data) => (
-      <footer className="pa2 bg-dark-gray near-white pv5">
-        <div className="flex flex-wrap justify-around w-100 mw9 center mb5">
-          <div className="w-100 mw5 mb4">
-            <span className="display f2">
+      <footer className="px-4 py-20 bg-dark-gray text-near-white">
+        <div className="flex flex-row flex-wrap justify-around max-w-screen-xl">
+          <div className="mb-8 text-mid-gray">
+            <span className="font-serif text-3xl lg:text-5xl">
               {data.site.siteMetadata.siteTitle}
             </span>
             <hr />
-            <div className="w-100 flex justify-around items-center pv2">
+            <div className="flex justify-around items-center py-4">
               {data.site.siteMetadata.facebook && (
-                <a
-                  className="near-white"
+                <MultiLink
+                  className="text-near-white"
                   href={data.site.siteMetadata.facebook}
                 >
                   <FaFacebookF />
-                </a>
+                </MultiLink>
               )}
 
               {data.site.siteMetadata.youtube && (
-                <a className="near-white" href={data.site.siteMetadata.youtube}>
+                <MultiLink
+                  className="text-near-white"
+                  href={data.site.siteMetadata.youtube}
+                >
                   <FaYoutube />
-                </a>
+                </MultiLink>
               )}
 
               {data.site.siteMetadata.github && (
-                <a className="near-white" href={data.site.siteMetadata.github}>
+                <MultiLink
+                  className="text-near-white"
+                  href={data.site.siteMetadata.github}
+                >
                   <FaGithub />
-                </a>
+                </MultiLink>
               )}
 
               {data.site.siteMetadata.pinterest && (
-                <a
-                  className="near-white"
+                <MultiLink
+                  className="text-near-white"
                   href={data.site.siteMetadata.pinterest}
                 >
                   <FaPinterestP />
-                </a>
+                </MultiLink>
               )}
 
               {data.site.siteMetadata.twitter && (
-                <a className="near-white" href={data.site.siteMetadata.twitter}>
+                <MultiLink
+                  className="text-near-white"
+                  href={data.site.siteMetadata.twitter}
+                >
                   <FaTwitter />
-                </a>
+                </MultiLink>
               )}
 
               {data.site.siteMetadata.instagram && (
-                <a className="near-white" href={data.site.siteMetadata.instagram}>
+                <MultiLink
+                  className="text-near-white"
+                  href={data.site.siteMetadata.instagram}
+                >
                   <FaInstagram />
-                </a>
+                </MultiLink>
               )}
             </div>
           </div>
-          <div className="flex flex-column">
-            <span className="near-white sans-serif f5 tracked mb3 db">
+          <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
+            <span className="mb-6 block">
               WRITING BY {data.site.siteMetadata.siteTitle}
             </span>
-            <Link
-              to="/blog"
-              className="near-white sans-serif f5 tracked pv1 db"
-            >
-              ALL POSTS
-            </Link>
-            <Link
-              to="/rss.xml"
-              className="near-white sans-serif f5 tracked pv1 db"
-            >
-              RSS FEED
-            </Link>
+            <MultiLink to="/blog">ALL POSTS</MultiLink>
+            <MultiLink to="/rss.xml">RSS FEED</MultiLink>
           </div>
-          <div className="flex flex-column">
-            <span className="near-white sans-serif f5 tracked mb3 db">
+          <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
+            <span className="text-near-white font-sans-serif mb-6">
               MORE ON {data.site.siteMetadata.siteTitle}
             </span>
-            <Link
-              to="/about"
-              className="near-white sans-serif f5 tracked pv1 db"
-            >
-              ABOUT US
-            </Link>
-            <a
-              href={data.site.siteMetadata.mailChimpUrl}
-              className="near-white sans-serif f5 tracked pv1 db"
-            >
-              NEWS LETTER
-            </a>
+            <MultiLink to="/about">ABOUT US</MultiLink>
+            <a href={data.site.siteMetadata.mailChimpUrl}>NEWSLETTER</a>
           </div>
         </div>
-        <div className="w-100 mw9 center silver mb3">
-          <div className="w-100 bb b--mid-gray mv3"></div>
-          <div className="flex w-100 mw6 items-center justify-center justify-start-ns">
-            <a
-              href="/sitemap.xml"
-              className="silver sans-serif f5 tracked pv1 db mh1"
-            >
-              SITEMAP
-            </a>
-            <span className="mh1">|</span>
-            <Link
-              to="/privacy"
-              className="silver sans-serif f5 tracked pv1 db mh1"
-            >
-              PRIVACY
-            </Link>
-            <span className="mh1">|</span>
-            <a
-              href="https://github.com/madelyneriksen/gatsby-starter-tyra"
-              className="silver sans-serif f5 tracked pv1 db mh1"
-            >
+        <div className="center text-silver mb-6 font-sans-serif text-silver tracking-widest">
+          <div className="w-full border-b border-mid-gray my-6"></div>
+          <div className="flex flex-row items-center justify-center">
+            <MultiLink href="/sitemap.xml">SITEMAP</MultiLink>
+            <span className="mx-4">|</span>
+            <MultiLink to="/privacy">PRIVACY</MultiLink>
+            <span className="mx-4">|</span>
+            <MultiLink href="https://github.com/madelyneriksen/gatsby-starter-tyra">
               THEME
-            </a>
+            </MultiLink>
           </div>
         </div>
-        <div className="w-100 mw9 silver text-center sans-serif f6">
+        <div className="text-silver text-center font-sans-serif text-sm text-mid-gray">
           <p>
-            Development: Manuel Penaloza (C) 2020
+            Website Entwicklung:{" "}
+            <MultiLink to="https://manpenaloza.dev" className="underline">
+              Manuel Penaloza
+            </MultiLink>
+            , 2020
           </p>
         </div>
       </footer>
