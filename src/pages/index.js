@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../common/layouts";
 import { graphql } from "gatsby";
-import Hero from "../homepage/components/teaser";
+import Teaser from "../homepage/components/teaser";
 import Card from "../homepage/components/card";
 import About from "../homepage/components/about";
 import Bio from "../homepage/components/bio";
@@ -13,7 +13,7 @@ import Landing from '../homepage/components/landing';
 import Education from "../homepage/components/education";
 
 export default ({ data }) => {
-  let post = data.featuredPost.edges[0].node;
+  
   return (
     <Layout>
       <Seo
@@ -24,14 +24,14 @@ export default ({ data }) => {
         <Landing />
       </VideoHero>
       <Me />
-      <Hero
-        title={post.frontmatter.title}
-        image={post.frontmatter.postImage.childImageSharp.fluid}
-        to={post.frontmatter.slug}
-        description={post.frontmatter.description}
+      <Teaser
+        title={data.featuredPost.title}
+        image={data.featuredPost.introImage.fluid}
+        to={data.featuredPost.slug}
+        description="description statically texted"
       />
       <Projects />
-      <div className="flex flex-wrap center mw9 justify-around pb3">
+      <div className="flex flex-row flex-wrap justify-around">
         {data.cards.edges.map(({ node }) => (
           <Card
             title={node.frontmatter.title}
@@ -58,25 +58,12 @@ export const query = graphql`
         }
       }
     }
-    featuredPost: allMarkdownRemark(
-      limit: 1
-      sort: { order: DESC, fields: frontmatter___date }
-      filter: { frontmatter: { type: { eq: "post" } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description: metaDescription
-            slug
-            postImage {
-              childImageSharp {
-                fluid(maxWidth: 1920) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+    featuredPost: contentfulBlog {
+      title
+      slug
+      introImage {
+        fluid(maxWidth:1800) {
+          ...GatsbyContentfulFluid
         }
       }
     }

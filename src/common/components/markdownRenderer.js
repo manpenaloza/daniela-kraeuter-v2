@@ -1,12 +1,5 @@
 import React from "react";
-import { SectionLink } from "react-scroll-section";
 import MultiLink from "gatsby-universal-link";
-
-const StyledLink = ({ children }) => {
-  return (
-    <MultiLink>{children}</MultiLink>
-  );
-};
 
 const StyledMarkdownParagraph = ({ children }) => (
   <p className="text-lg">{children}</p>
@@ -20,18 +13,9 @@ const StyledMarkdownListItem = ({ children }) => {
   return <li>{children}</li>;
 };
 
-const MarkdownLink = ({ href, children }) => {
-  const isInnerLink = href.startsWith("#");
-  return isInnerLink ? (
-    <SectionLink section={href.substring(1, href.length)}>
-      {({ onClick }) => <StyledLink onClick={onClick}>{children}</StyledLink>}
-    </SectionLink>
-  ) : (
-    <StyledLink href={href} target="_blank">
-      {children}
-    </StyledLink>
-  );
-};
+const MarkdownLink = ({ href, children }) => (
+  <MultiLink to={href}>{children}</MultiLink>
+);
 
 export default {
   paragraph: StyledMarkdownParagraph,

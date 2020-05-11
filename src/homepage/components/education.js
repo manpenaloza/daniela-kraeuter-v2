@@ -67,7 +67,7 @@ export default () => (
                       </UnorderedList>
                     </div>
                     <div className="text-center mt-8">
-                    <MultiLink to={education.url} className="underline text-green font-bold tracking-widest">Zur Website</MultiLink>
+                    <MultiLink to={education.url} className="underline text-green font-bold tracking-widest">{education.name} Website</MultiLink>
                     </div>
                   </article>
                 ))}

@@ -13,6 +13,8 @@ module.exports = {
     colors: {
       green: "rgb(77 146 22)",
       violett: "rgb(182 0 100)",
+      "near-white": "#f4f4f4",
+      gray: "#333",
     },
     borderWidth: {
       default: "1px",
@@ -44,6 +46,9 @@ module.exports = {
       scale: {
         "97": ".97"
       },
+      height: {
+        half: "50vh"
+      }
     },
   },
   variants: {

@@ -1,20 +1,21 @@
-import React from "react"
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
-import '../../common/styles/custom.tachyons.css'
-import 'tachyons';
+import React from "react";
+import Img from "gatsby-image";
+import Button from "../../common/components/button";
 
 export default (props) => (
-  <React.Fragment>
+  <section className="min-h-screen flex flex-column">
     <Img
-      className="w-100 vh-50 mw9 center"
+      className="w-full h-1/3 md:h-half"
       fluid={props.image}
-      alt={props.description} />
-    <div
-      className="h-auto bg-near-white mw9 w-100 flex flex-column items-center justify-center pv5 ph2 center">
-      <span className="fw1 display dark-gray db tc w-100 mw7 f3 f2-ns">{props.title}</span>
-      <p className="serif mw6 tc f5 dn dib-l mb4 db">{props.description}</p>
-      <Link className="db pv3 ph5 tracked ttu b bg-primary-violett white sans-serif no-underline hover-light-gray" to={props.to}>Read More</Link>
+      alt={`Blog Post Daniela Sohneg ${props.title}`}
+    />
+    <div className="flex-1 container bg-near-white py-10 text-center">
+      <h2 className="font-serif max-w-2xl lg:max-w-3xl text-2xl md:text-3xl lg:text-5xl font-bold leading-normal pb-10 center">
+        {props.title}
+      </h2>
+      <Button.PrimaryWithPageChange to={props.to} classNames="inline-block">
+        Artikel lesen
+      </Button.PrimaryWithPageChange>
     </div>
-  </React.Fragment>
-)
+  </section>
+);

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import MultiLink from "gatsby-universal-link";
 
 const btnPrimaryClassnames =
@@ -11,9 +10,13 @@ const PrimaryButtonWithPageChange = ({
   classNames = "",
   ...props
 }) => (
-  <Link className={`${btnPrimaryClassnames} ${classNames}`} to={to} {...props}>
+  <MultiLink
+    className={`${btnPrimaryClassnames} ${classNames}`}
+    to={to}
+    {...props}
+  >
     {children}
-  </Link>
+  </MultiLink>
 );
 
 const PrimaryButtonWithPageScroll = ({
