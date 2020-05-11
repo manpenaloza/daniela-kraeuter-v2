@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link, StaticQuery, graphql } from 'gatsby';
-
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
+import Button from '../../common/components/button';
 
 export default () => (
   <StaticQuery
@@ -12,12 +12,16 @@ export default () => (
             homepageAbout
           }
         }
-      }  
+      }
     `}
     render={(data) => (
-      <div className="bg-violett flex flex-column justify-center items-center px-10 py-20 text-near-white">
-        <p className="f4 serif mw7 tc lh-copy">{data.site.siteMetadata.homepageAbout} Kontaktieren Sie mich, wenn ich etwas für Sie tun kann.</p>
-        <Link to="/about" className="mt3 db no-underline ph5 pv3 sans-serif text-near-white bg-dark-gray ttu tracked b hover-bg-mid-gray">Kontakt aufnehmen</Link>
+      <div className="bg-violett flex flex-column justify-center items-center px-10 py-20 text-near-white leading-relaxed text-center">
+        <p className="text-xl md:text-2xl lg:text-3xl font-serif max-w-screen-sm xl:max-w-screen-md">
+          {data.site.siteMetadata.homepageAbout} Kontaktieren Sie mich, wenn ich
+          etwas für Sie tun kann.
+        </p>
+        <Button.PrimaryWithPageChange to="/about" classNames="mt-6 no-underline tracking-widest" colorClassName="bg-dark-gray">Daniela kontaktieren</Button.PrimaryWithPageChange>
       </div>
-    )} />
-)
+    )}
+  />
+);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby";
 import {
   FaPinterestP,
   FaFacebookF,
@@ -41,7 +41,8 @@ export default () => (
               {data.site.siteMetadata.facebook && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.facebook}
+                  to={data.site.siteMetadata.facebook}
+                  target="_blank"
                 >
                   <FaFacebookF />
                 </MultiLink>
@@ -50,7 +51,8 @@ export default () => (
               {data.site.siteMetadata.youtube && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.youtube}
+                  to={data.site.siteMetadata.youtube}
+                  target="_blank"
                 >
                   <FaYoutube />
                 </MultiLink>
@@ -59,7 +61,8 @@ export default () => (
               {data.site.siteMetadata.github && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.github}
+                  to={data.site.siteMetadata.github}
+                  target="_blank"
                 >
                   <FaGithub />
                 </MultiLink>
@@ -68,7 +71,8 @@ export default () => (
               {data.site.siteMetadata.pinterest && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.pinterest}
+                  to={data.site.siteMetadata.pinterest}
+                  target="_blank"
                 >
                   <FaPinterestP />
                 </MultiLink>
@@ -77,7 +81,8 @@ export default () => (
               {data.site.siteMetadata.twitter && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.twitter}
+                  to={data.site.siteMetadata.twitter}
+                  target="_blank"
                 >
                   <FaTwitter />
                 </MultiLink>
@@ -86,7 +91,8 @@ export default () => (
               {data.site.siteMetadata.instagram && (
                 <MultiLink
                   className="text-near-white"
-                  href={data.site.siteMetadata.instagram}
+                  to={data.site.siteMetadata.instagram}
+                  target="_blank"
                 >
                   <FaInstagram />
                 </MultiLink>
@@ -95,29 +101,25 @@ export default () => (
           </div>
           <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
             <span className="mb-6 block">
-              WRITING BY {data.site.siteMetadata.siteTitle}
+              ERSTELLUNG DES INHALTS DURCH<br /> {data.site.siteMetadata.siteTitle}
             </span>
-            <MultiLink to="/blog">ALL POSTS</MultiLink>
-            <MultiLink to="/rss.xml">RSS FEED</MultiLink>
+            <MultiLink to="/blog">ALLE BLOG BEITRÄGE</MultiLink>
+            {/* <MultiLink to="/rss.xml">RSS FEED</MultiLink> */}
           </div>
           <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
             <span className="text-near-white font-sans-serif mb-6">
-              MORE ON {data.site.siteMetadata.siteTitle}
+              MEHR ÜBER {data.site.siteMetadata.siteTitle}
             </span>
-            <MultiLink to="/about">ABOUT US</MultiLink>
-            <a href={data.site.siteMetadata.mailChimpUrl}>NEWSLETTER</a>
+            <MultiLink to="/about">MEINE PERSON</MultiLink>
+            <MultiLink to={data.site.siteMetadata.mailChimpUrl}>NEWSLETTER</MultiLink>
           </div>
         </div>
         <div className="center text-silver mb-6 font-sans-serif text-silver tracking-widest">
           <div className="w-full border-b border-mid-gray my-6"></div>
           <div className="flex flex-row items-center justify-center">
-            <MultiLink href="/sitemap.xml">SITEMAP</MultiLink>
+            <MultiLink to="/sitemap.xml">SITEMAP</MultiLink>
             <span className="mx-4">|</span>
             <MultiLink to="/privacy">PRIVACY</MultiLink>
-            <span className="mx-4">|</span>
-            <MultiLink href="https://github.com/madelyneriksen/gatsby-starter-tyra">
-              THEME
-            </MultiLink>
           </div>
         </div>
         <div className="text-silver text-center font-sans-serif text-sm text-mid-gray">

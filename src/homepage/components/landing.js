@@ -31,7 +31,8 @@ export default () => {
           }}
         >
           <div
-            className="max-w-screen-xl text-left md:grid grid-cols-2"
+            className="text-left md:grid grid-cols-2"
+            style={{ maxWidth: 1200  }} // custom max-width instead using a Tailwind classname for aesthetics reasons
           >
             <div className="textBoxInnerSpacing flex flex-column justify-center text-near-white">
               <Slide left>

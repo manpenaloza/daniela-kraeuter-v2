@@ -1,17 +1,18 @@
 import React from "react";
 import MultiLink from "gatsby-universal-link";
 
-const btnPrimaryClassnames =
-  "py-3 lg:py-6 px-12 lg:px-16 font-bold hover:shadow-md uppercase bg-violett text-near-white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100 rounded-lg hover:text-shadow-gray cursor-pointer";
+const btnPrimaryClassNames =
+  "py-3 lg:py-4 px-12 lg:px-16 text-xl font-bold hover:shadow-md uppercase text-near-white sans-serif no-underline transform hover:scale-97 transition ease-in-out duration-100 rounded-lg hover:text-shadow-gray cursor-pointer";
 
 const PrimaryButtonWithPageChange = ({
   children,
   to = "/",
   classNames = "",
+  colorClassName = "bg-violett",
   ...props
 }) => (
   <MultiLink
-    className={`${btnPrimaryClassnames} ${classNames}`}
+    className={`${btnPrimaryClassNames} ${classNames} ${colorClassName}`}
     to={to}
     {...props}
   >
@@ -23,12 +24,13 @@ const PrimaryButtonWithPageScroll = ({
   children,
   scrollToId,
   classNames = "",
+  colorClassName = "bg-violett",
   ...props
 }) => (
   <MultiLink
     scrollToId={scrollToId}
     {...props}
-    className={`${btnPrimaryClassnames} ${classNames}`}
+    className={`${btnPrimaryClassNames} ${classNames} ${colorClassName}`}
   >
     {children}
   </MultiLink>

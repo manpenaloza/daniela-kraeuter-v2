@@ -9,7 +9,7 @@ export default ({ videoSrc, children }) => {
 
   return (
     <div
-      className="videoHeroContainer text-near-white w-100 relative flex items-center justify-center font-serif"
+      className="text-near-white w-100 relative flex items-center justify-center font-serif"
       /* upcoming inline style: equals the viewport height minus the navbar height  */
       style={{ height: "calc(100vh - 60px)" }}
     >
