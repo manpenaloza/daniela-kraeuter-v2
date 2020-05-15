@@ -17,7 +17,7 @@ export default (props) => (
       <h2 className="font-serif max-w-2xl lg:max-w-3xl text-2xl md:text-3xl lg:text-5xl leading-normal pb-10 center">
         {props.title}
       </h2>
-      <Button.PrimaryWithPageChange to={props.to} classNames="inline-block">
+      <Button.PrimaryWithPageChange to={props.to}>
         Artikel lesen
       </Button.PrimaryWithPageChange>
     </div>

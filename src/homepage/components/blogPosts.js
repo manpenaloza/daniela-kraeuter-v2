@@ -3,6 +3,7 @@ import MultiLink from "gatsby-universal-link";
 import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 import Headline from "../../common/components/headline";
+import Button from "../../common/components/button";
 
 import Card from "../../homepage/components/card";
 
@@ -11,12 +12,15 @@ export default function BlogPosts() {
     allContentfulBlog: { edges: blogPostTeasers },
   } = useStaticQuery(graphql`
     query {
-      allContentfulBlog(limit: 2) {
+      allContentfulBlog(limit: 2, skip: 1) {
         edges {
           node {
             id
             title
-            createdAt
+            slug
+            childContentfulBlogBodyRichTextNode {
+              json
+            }
             introImage {
               fluid(maxWidth: 200) {
                 aspectRatio
@@ -27,38 +31,29 @@ export default function BlogPosts() {
                 sizes
               }
             }
-            author {
-              id
-              name
-              description
-              avatarImage {
-                fluid(maxWidth: 200) {
-                  src
-                  srcSet
-                }
-              }
-            }
-            slug
           }
         }
       }
     }
   `);
-  console.log(blogPostTeasers);
+  
+  const teaserTextSubstringLength = window.innerWidth < 640 ? 180 :  280;
+
   return (
     <section className="min-h-screen py-20 container">
       <Headline Type="h2" colorClassName="text-violett">
         Aktuelle Blog Beiträge
       </Headline>
+      
       <p className="max-w-screen-sm">
-        Alle meine Blog Beiträge findest du auf{" "}
+        Laufend erstelle ich für dich Artikel mit Tipps und Tricks zum Thema
+        Kräuter und ätherische Öle. Alle Beiträge gibt's gesammelt in{" "}
         <MultiLink to="blog" className="underline">
-          dieser Übersicht
+          meinem Blog.
         </MultiLink>
-        . Hier erhältst du eine kurze Übersicht meiner aktuellsten Tipps und
-        Tricks zu Kräutern und ätherische Ölen.
       </p>
-      <div className="flex flex-column items-stretch justify-start max-w-screen-lg m-auto">
+    
+      <div className="max-w-screen-lg flex flex-column items-stretch justify-start m-auto">
         {/* <Card
           title="Title"
           image="sdf"
@@ -66,29 +61,47 @@ export default function BlogPosts() {
           description="Description text"
         /> */}
         {blogPostTeasers.map(({ node: blogPostTeaser }) => (
-          <MultiLink to={blogPostTeaser.slug}>
-            <div className="my-8 md:p-8 relative">
+          <article className="mt-8 mb-16" key={blogPostTeaser.id}>
+            <div className="p-8 lg:p-16 relative">
+              <MultiLink to={blogPostTeaser.slug}>
+              <h3
+                className="uppercase text-violett text-xl md:text-3xl lg:text-4xl font-serif font-bold leading-normal text-mid-gray."
+                style={{
+                  textShadow:
+                    "1px 1px 0 #f4f4f4, 1px -1px 0 #f4f4f4, -1px 1px 0 #f4f4f4, -1px -1px 0 #f4f4f4, 1px 1px 0 #f4f4f4, 0px 1px 0 #f4f4f4, -1px 0px 0 #f4f4f4, 0px -1px 0 #f4f4f4, 1px 1px 0px #f4f4f4",
+                }}
+              >
+                {blogPostTeaser.title}<span className="text-green">.</span>
+              </h3>
+              </MultiLink>
+              <p
+                className="max-w-screen-sm m-auto text-lg text-mid-gray bg-near-white px-2 mt-12 border-l-4 border-green"
+              >
+                {/* upcoming teaser fetcher is ugly to the max... urgently fix this by restructuring/extending its contentful implementation */}
+                {blogPostTeaser?.childContentfulBlogBodyRichTextNode?.json?.content[0]?.content[0]?.value.substring(0, teaserTextSubstringLength)}...
+              </p>
               <Img
                 fluid={blogPostTeaser.introImage.fluid}
-                // classNames="w-1/4 absolute"
+                className="w-1/3 lg:w-1/4 h-full top-0 left-0 with-blog-post-teaser-overlay"
+                object-fit="cover"
+                object-position="50% 50%"
+                imgStyle={{
+                  filter: "contrast(150%)",
+                }}
                 style={{
                   position: "absolute",
-                  width: "30%",
                   zIndex: -1,
-                  opacity: 0.3,
+                  borderTopLeftRadius: "2rem",
+                  borderBottomRightRadius: "2rem",
                 }}
               />
-              <div className=" p-8 lg:p-16">
-                <h3 className="uppercase text-2xl md:text-3xl font-serif font-bold leading-normal text-mid-gray.">
-                  {blogPostTeaser.title}
-                </h3>
-                <p className="max-w-screen-sm m-auto">
-                  This is the teaser text This is the teaser text This is the
-                  teaser text This is the teaser text
-                </p>
-              </div>
             </div>
-          </MultiLink>
+            <div className="max-w-screen-sm m-auto mt-8">
+              <Button.PrimaryWithPageChange to={blogPostTeaser.slug}>
+                weiterlesen
+              </Button.PrimaryWithPageChange>
+            </div>
+          </article>
         ))}
         {/* {data.cards.edges.map(({ node }) => (
         <Card
