@@ -5,7 +5,7 @@ import 'tachyons';
 
 
 export default (props) => (
-  <div className="w-100 mw6 pa2">
+  <div className="max-w-screen-md bg-black">
     <Link to={props.to}><Img fluid={props.image} alt="" className="w-100 h5"/></Link>
     <div className="pa2 display dark-gray f3 tc mb3 h3">
       {props.title}

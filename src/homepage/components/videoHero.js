@@ -9,9 +9,9 @@ export default ({ videoSrc, children }) => {
 
   return (
     <div
-      className="text-near-white w-100 relative flex items-center justify-center font-serif"
+      className="py-4 text-near-white w-100 relative flex items-center justify-center font-serif"
       /* upcoming inline style: equals the viewport height minus the navbar height  */
-      style={{ height: "calc(100vh - 60px)" }}
+      style={{ minHeight: "calc(100vh - 60px)" }}
     >
       <div className="absolute top-0 left-0 w-100 h-100 overflow-hidden bg-green bg-center bg-cover bg-no-repeat videoContainer">
         <video

@@ -99,14 +99,14 @@ export default () => (
               )}
             </div>
           </div>
-          <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
+          <div className="flex flex-column font-sans-serif tracking-wider text-near-white">
             <span className="mb-6 block">
               ERSTELLUNG DES INHALTS DURCH<br /> {data.site.siteMetadata.siteTitle}
             </span>
             <MultiLink to="/blog">ALLE BLOG BEITRÄGE</MultiLink>
             {/* <MultiLink to="/rss.xml">RSS FEED</MultiLink> */}
           </div>
-          <div className="flex flex-column font-sans-serif tracking-widest text-near-white">
+          <div className="flex flex-column font-sans-serif tracking-wider text-near-white">
             <span className="text-near-white font-sans-serif mb-6">
               MEHR ÜBER {data.site.siteMetadata.siteTitle}
             </span>
@@ -114,7 +114,7 @@ export default () => (
             <MultiLink to={data.site.siteMetadata.mailChimpUrl}>NEWSLETTER</MultiLink>
           </div>
         </div>
-        <div className="center text-silver mb-6 font-sans-serif text-silver tracking-widest">
+        <div className="center text-silver mb-6 font-sans-serif text-silver tracking-wider">
           <div className="w-full border-b border-mid-gray my-6"></div>
           <div className="flex flex-row items-center justify-center">
             <MultiLink to="/sitemap.xml">SITEMAP</MultiLink>

@@ -41,7 +41,7 @@ export default () => (
         return (
           <React.Fragment>
             <Fade bottom>
-              <Headline Type="h2" tailwindColorClassname="text-violett">
+              <Headline Type="h2" colorClassName="text-violett">
                 Ausbildungen und Diplome
               </Headline>
               <div className="lg:grid grid-cols-2 gap-8">
@@ -64,7 +64,7 @@ export default () => (
                       </UnorderedList>
                     </div>
                     <div className="text-center mt-8">
-                    <MultiLink to={education.url} target="_blank" className="underline text-green font-sans-serif font-bold tracking-widest">{education.name} Website</MultiLink>
+                    <MultiLink to={education.url} target="_blank" className="underline text-green font-sans-serif font-bold tracking-wider">{education.name} Website</MultiLink>
                     </div>
                   </article>
                 ))}

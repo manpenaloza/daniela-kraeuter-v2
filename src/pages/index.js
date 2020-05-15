@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../common/layouts";
 import { graphql } from "gatsby";
 import Teaser from "../homepage/components/teaser";
-import Card from "../homepage/components/card";
 import About from "../homepage/components/about";
 import Me from "../homepage/components/me";
 import Projects from "../homepage/components/projects";
@@ -10,6 +9,7 @@ import Seo from "../common/seo";
 import VideoHero from "../homepage/components/videoHero";
 import Landing from '../homepage/components/landing';
 import Education from "../homepage/components/education";
+import BlogPosts from "../homepage/components/blogPosts";
 
 export default ({ data }) => {
   
@@ -29,16 +29,7 @@ export default ({ data }) => {
         to={data.featuredPost.slug}
         description="description statically texted"
       />
-      <div className="flex flex-row flex-wrap justify-around">
-        {data.cards.edges.map(({ node }) => (
-          <Card
-            title={node.frontmatter.title}
-            image={node.frontmatter.postImage.childImageSharp.fluid}
-            to={node.frontmatter.slug}
-            description={node.frontmatter.description}
-          />
-        ))}
-      </div>
+      <BlogPosts />
       <Projects />
       <Education />
       <About />
