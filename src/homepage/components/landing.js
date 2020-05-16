@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import useIsScrolled from "use-is-scrolled";
 import Slide from "react-reveal/Slide";
 import Img from "gatsby-image";

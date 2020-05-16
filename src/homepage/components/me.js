@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery, graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Fade from "react-reveal/Fade";
 import Pulse from "react-reveal/Pulse";
 import ReactMarkdown from "react-markdown";
