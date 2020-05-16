@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require("path");
 
-exports.createPages = ({ graphql, actions}) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -8,9 +8,16 @@ exports.createPages = ({ graphql, actions}) => {
       graphql(
         `
           {
+            allBlogPosts: allContentfulBlog {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
             allPosts: allMarkdownRemark(
-            filter: {frontmatter: {type: {eq: "post"}}},
-            sort: {fields: frontmatter___date, order: DESC},
+              filter: { frontmatter: { type: { eq: "post" } } }
+              sort: { fields: frontmatter___date, order: DESC }
             ) {
               edges {
                 node {
@@ -32,34 +39,38 @@ exports.createPages = ({ graphql, actions}) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
-          reject(result.errors)
+          reject(result.errors);
         }
         const allPosts = result.data.allPosts.edges;
+
+        // next line: new code - don't delete
+        const allBlogPosts = result.data.allBlogPosts.edges;
+
         const groupedPosts = result.data.allPosts.group;
-        const paginationTemplate = path.resolve('src/blog/index.js');
+        const paginationTemplate = path.resolve("src/blog/index.js");
         const postsPerPage = 10;
         let numPages = Math.ceil(allPosts.length / postsPerPage);
 
         // Creating the main blog index
         Array.from({ length: numPages }).forEach((_, i) => {
           createPage({
-            path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+            path: i === 0 ? "/blog" : `/blog/${i + 1}`,
             component: paginationTemplate,
             context: {
               limit: postsPerPage,
               skip: i * postsPerPage,
               nextPage: `/blog/${i + 2}`,
               pageNumber: i + 1,
-            }
-          })
-        })
+            },
+          });
+        });
 
         // Creating all category pages.
         let category;
         let categoryPosts;
-        const categoryTemplate = path.resolve('src/blog/category.js');
+        const categoryTemplate = path.resolve("src/blog/category.js");
         groupedPosts.forEach((group, _) => {
           category = group.fieldValue;
           categoryPosts = group.edges;
@@ -74,24 +85,36 @@ exports.createPages = ({ graphql, actions}) => {
                 nextPage: `/${category}/${i + 2}`,
                 pageNumber: i + 1,
                 category: category,
-              }
-            })
-          })
-        })
+              },
+            });
+          });
+        });
 
-        // Create all the blog post pages.
-        const template = path.resolve('src/blog/post.js');
+        // Create all the blog post pages. - to be deleted
+        const oldtemplate = path.resolve("src/blog/_post.js");
         allPosts.forEach(({ node }) => {
           let slug = node.frontmatter.slug;
           createPage({
             path: slug,
-            component: template,
+            component: oldtemplate,
             context: {
               slug,
-            }
-          })
-        })
+            },
+          });
+        });
+
+        // nexb block - new code: don't delete
+        const blogPostTemplate = path.resolve("src/blog/post.js");
+        allBlogPosts.forEach(({ node: { slug } }) => {
+          createPage({
+            path: slug,
+            component: blogPostTemplate,
+            context: {
+              slug,
+            },
+          });
+        });
       })
-    )
-  })
-}
+    );
+  });
+};

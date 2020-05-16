@@ -22,7 +22,7 @@ export default ({ props, data }) => (
         alt={data.contentfulAbout.personalHeroImage.title}
       />
       <h1
-        className="text-mid-gray fw1 tc f2 display absolute dn dib-ns"
+        className="text-5xl text-mid-gray fw1 tc display absolute dn dib-ns"
         style={{
           bottom: "50%",
           left: "50%",
