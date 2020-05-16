@@ -11,6 +11,7 @@ exports.createPages = ({ graphql, actions }) => {
             allBlogPosts: allContentfulBlog {
               edges {
                 node {
+                  id
                   slug
                 }
               }
@@ -90,30 +91,31 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
 
-        // Create all the blog post pages. - to be deleted
-        const oldtemplate = path.resolve("src/blog/_post.js");
-        allPosts.forEach(({ node }) => {
-          let slug = node.frontmatter.slug;
+        // nexb block - new code: don't delete
+        const blogPostTemplate = path.resolve("src/blog/post.js");
+        allBlogPosts.forEach(({ node }) => {
+          console.log(node.id);
           createPage({
-            path: slug,
-            component: oldtemplate,
+            path: node.slug,
+            component: blogPostTemplate,
             context: {
-              slug,
+              id: node.id,
             },
           });
         });
 
-        // nexb block - new code: don't delete
-        const blogPostTemplate = path.resolve("src/blog/post.js");
-        allBlogPosts.forEach(({ node: { slug } }) => {
-          createPage({
-            path: slug,
-            component: blogPostTemplate,
-            context: {
-              slug,
-            },
-          });
-        });
+        // OLD OLD OLD - Create all the blog post pages. - to be deleted
+        // const oldtemplate = path.resolve("src/blog/_post.js");
+        // allPosts.forEach(({ node }) => {
+        //   let slug = node.frontmatter.slug;
+        //   createPage({
+        //     path: slug,
+        //     component: oldtemplate,
+        //     context: {
+        //       slug,
+        //     },
+        //   });
+        // });
       })
     );
   });

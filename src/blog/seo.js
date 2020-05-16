@@ -1,25 +1,24 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
-export default (props) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        contentfulAbout(id: { eq: "396fbdb2-8bf0-578c-9dca-0ff8d0af232c" }) {
-          description
-        }
-        site {
-          siteMetadata {
-            siteTitle: title
-            siteUrl
-          }
+export default (props) => {
+  const data = useStaticQuery(graphql`
+    query {
+      contentfulAbout(id: { eq: "396fbdb2-8bf0-578c-9dca-0ff8d0af232c" }) {
+        description
+      }
+      site {
+        siteMetadata {
+          siteTitle: title
+          siteUrl
         }
       }
-    `}
-    render={(data) => (
-      <Helmet>
-        <script type="application/ld+json">{`
+    }
+  `);
+  return (
+    <Helmet>
+      <script type="application/ld+json">{`
         {
           "@context": "http://schema.org",
             "@type": "Article",
@@ -46,7 +45,6 @@ export default (props) => (
             "description": "${data.contentfulAbout.description}"
         }
       `}</script>
-      </Helmet>
-    )}
-  />
-);
+    </Helmet>
+  );
+};
