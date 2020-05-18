@@ -30,7 +30,7 @@ export default ({ data }) => {
         description="description statically texted"
       />
       <BlogPosts />
-      <Projects />
+      {/* <Projects /> */}
       <Education />
       <About />
     </Layout>

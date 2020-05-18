@@ -3,18 +3,17 @@ import { Link } from "gatsby";
 import "tachyons";
 
 export default (props) => {
-  const date = new Date(props.date)
+  const date = new Date(props.date);
   return (
-    <div className="bg-washed-red ph2 pv5 flex flex-column justify-center items-center">
-      <Link
-        to={`/${props.category}`}
-        className="sans-serif ttu mid-gray tracked f6"
-      >
+    <div className="bg-violett text-near-white px-16 py-20 leading-tight flex flex-column justify-center items-center">
+      <span className="font-sans-serif uppercase text-sm">
         {props.category}
-      </Link>
-      <h1 className="dark-gray display fw4 f1-l f2 tc">{props.title}</h1>
+      </span>
+      <h1 className="text-center text-2xl md:text-4xl lg:text-6xl my-4 lg:my-8">{props.title}</h1>
       <span className="sans-serif tracked ttu f6 mb2">by {props.author}</span>
-      <span className="sans-serif tracked ttu f6">{date.toLocaleDateString('de-DE')}</span>
+      <span className="sans-serif tracked ttu f6">
+        {date.toLocaleDateString("de-DE")}
+      </span>
     </div>
   );
 };

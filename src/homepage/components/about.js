@@ -19,7 +19,7 @@ export default () => (
         <p className="text-xl md:text-2xl lg:text-3xl font-serif max-w-screen-sm xl:max-w-screen-md">
           {data.site.siteMetadata.homepageAbout} Sie haben Fragen zu meinen Workshops, Einzelbetreuungen oder sonstigem? Kontaktieren Sie mich!
         </p>
-        <Button.PrimaryWithPageChange to="/about" classNames="mt-6 no-underline tracking-wider" colorClassName="bg-dark-gray">Daniela kontaktieren</Button.PrimaryWithPageChange>
+        <Button.PrimaryWithPageChange to="mailto:daniela.sohneg@gmail.com" classNames="mt-6 no-underline tracking-wider" colorClassName="bg-dark-gray">Daniela kontaktieren</Button.PrimaryWithPageChange>
       </div>
     )}
   />

@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../common/layouts';
 import { Link, graphql } from 'gatsby';
 import Breadcrumbs from './components/breadcrumbs';
-import Preview from './components/post-preview.js';
+import Preview from './components/postPreview.js';
 import Seo from '../common/seo';
 import 'tachyons';
 

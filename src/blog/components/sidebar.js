@@ -28,7 +28,7 @@ export default (props) => {
         const base = encodeURIComponent(data.site.siteMetadata.siteUrl);
         return (
         <div className="dn db-l" style={{gridArea: "sidebar"}}>
-          <div className="w3 bg-dark-gray flex flex-wrap" style={{position: "sticky", top: "4rem"}}>
+          <div className="w3 bg-dark-gray flex flex-wrap" style={{position: "sticky", top: "3.5rem"}}>
             <a
               href={`https://pinterest.com/pin/create/button/?url=${base + location}&description=${desc}&media=${base + img}`}
               className="w-100 h3 flex items-center justify-center b near-white"><FaPinterestP /></a>

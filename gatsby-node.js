@@ -92,7 +92,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // nexb block - new code: don't delete
-        const blogPostTemplate = path.resolve("src/blog/post.js");
+        const blogPostTemplate = path.resolve("src/blog/blogPostTemplate.js");
         allBlogPosts.forEach(({ node }) => {
           console.log(node.id);
           createPage({
@@ -103,19 +103,6 @@ exports.createPages = ({ graphql, actions }) => {
             },
           });
         });
-
-        // OLD OLD OLD - Create all the blog post pages. - to be deleted
-        // const oldtemplate = path.resolve("src/blog/_post.js");
-        // allPosts.forEach(({ node }) => {
-        //   let slug = node.frontmatter.slug;
-        //   createPage({
-        //     path: slug,
-        //     component: oldtemplate,
-        //     context: {
-        //       slug,
-        //     },
-        //   });
-        // });
       })
     );
   });
