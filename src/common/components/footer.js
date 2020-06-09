@@ -31,7 +31,7 @@ export default () => (
     `}
     render={(data) => (
       <footer className="px-4 py-20 bg-dark-gray text-near-white">
-        <div className="flex flex-row flex-wrap justify-around max-w-screen-xl">
+        <div className="max-w-screen-xl md:flex md:flex-row md:flex-wrap md:justify-around">
           <div className="mb-8 text-mid-gray">
             <span className="font-serif text-3xl lg:text-5xl">
               {data.site.siteMetadata.siteTitle}
