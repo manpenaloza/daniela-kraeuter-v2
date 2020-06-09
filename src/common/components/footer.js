@@ -1,8 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import {
-  FaPinterestP,
-  FaFacebookF,
+  FaPinterest,
+  FaFacebook,
   FaTwitter,
   FaYoutube,
   FaGithub,
@@ -10,6 +10,25 @@ import {
 } from "react-icons/fa";
 import MultiLink from "gatsby-universal-link";
 import "tachyons";
+
+const SocialLink = ({ networkName, linkTarget }) => {
+  const icons = {
+    facebook: FaFacebook,
+    pinterest: FaPinterest,
+    twitter: FaTwitter,
+    youtube: FaYoutube,
+    github: FaGithub,
+    instagram: FaInstagram,
+  }
+
+  const Icon = icons[networkName];
+  
+  return (
+    <MultiLink className="text-near-white" target="_blank" to={linkTarget}>
+      <Icon />
+    </MultiLink>
+  );
+};
 
 export default () => (
   <StaticQuery
@@ -39,69 +58,51 @@ export default () => (
             <hr />
             <div className="flex justify-around items-center py-4">
               {data.site.siteMetadata.facebook && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.facebook}
-                  target="_blank"
-                >
-                  <FaFacebookF />
-                </MultiLink>
+                <SocialLink
+                  networkName="facebook"
+                  linkTarget={data.site.siteMetadata.facebook}
+                />
               )}
 
               {data.site.siteMetadata.youtube && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.youtube}
-                  target="_blank"
-                >
-                  <FaYoutube />
-                </MultiLink>
+                <SocialLink
+                  networkName="youtube"
+                  linkTarget={data.site.siteMetadata.youtube}
+                />
               )}
 
               {data.site.siteMetadata.github && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.github}
-                  target="_blank"
-                >
-                  <FaGithub />
-                </MultiLink>
+                <SocialLink
+                  networkName="github"
+                  linkTarget={data.site.siteMetadata.github}
+                />
               )}
-
               {data.site.siteMetadata.pinterest && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.pinterest}
-                  target="_blank"
-                >
-                  <FaPinterestP />
-                </MultiLink>
+                <SocialLink
+                  networkName="pinterest"
+                  linkTarget={data.site.siteMetadata.pinterest}
+                />
               )}
 
               {data.site.siteMetadata.twitter && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.twitter}
-                  target="_blank"
-                >
-                  <FaTwitter />
-                </MultiLink>
+                <SocialLink
+                  networkName="twitter"
+                  linkTarget={data.site.siteMetadata.twitter}
+                />
               )}
 
               {data.site.siteMetadata.instagram && (
-                <MultiLink
-                  className="text-near-white"
-                  to={data.site.siteMetadata.instagram}
-                  target="_blank"
-                >
-                  <FaInstagram />
-                </MultiLink>
+                <SocialLink
+                  networkName="instagram"
+                  linkTarget={data.site.siteMetadata.instagram}
+                />
               )}
             </div>
           </div>
           <div className="flex flex-column font-sans-serif tracking-wider text-near-white">
             <span className="mb-6 block">
-              ERSTELLUNG DES INHALTS DURCH<br /> {data.site.siteMetadata.siteTitle}
+              ERSTELLUNG DES INHALTS DURCH
+              <br /> {data.site.siteMetadata.siteTitle}
             </span>
             <MultiLink to="/blog">ALLE BLOG BEITRÄGE</MultiLink>
             {/* <MultiLink to="/rss.xml">RSS FEED</MultiLink> */}
@@ -111,7 +112,9 @@ export default () => (
               MEHR ÜBER {data.site.siteMetadata.siteTitle}
             </span>
             <MultiLink to="/about">MEINE PERSON</MultiLink>
-            <MultiLink to={data.site.siteMetadata.mailChimpUrl}>NEWSLETTER</MultiLink>
+            <MultiLink to={data.site.siteMetadata.mailChimpUrl}>
+              NEWSLETTER
+            </MultiLink>
           </div>
         </div>
         <div className="center text-silver mb-6 font-sans-serif text-silver tracking-wider">
