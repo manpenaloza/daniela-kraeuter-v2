@@ -12,16 +12,14 @@ import MultiLink from "gatsby-universal-link";
 import "tachyons";
 
 const SocialLink = ({ networkName, linkTarget }) => {
-  const icons = {
+  const Icon = {
     facebook: FaFacebook,
     pinterest: FaPinterest,
     twitter: FaTwitter,
     youtube: FaYoutube,
     github: FaGithub,
     instagram: FaInstagram,
-  }
-
-  const Icon = icons[networkName];
+  }[networkName];
   
   return (
     <MultiLink className="text-near-white" target="_blank" to={linkTarget}>
