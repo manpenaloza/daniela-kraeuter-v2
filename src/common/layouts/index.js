@@ -15,7 +15,7 @@ export default (props) => {
       </Helmet>
       <ScrollingProvider>
         <Navbar />
-        <div className="font-serif leading-loose text-lg text-mid-gray">
+        <div className="font-sans-serif leading-loose text-lg text-gray">
           {props.children}
         </div>
         <Footer />

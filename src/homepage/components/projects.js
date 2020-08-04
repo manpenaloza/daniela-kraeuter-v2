@@ -45,7 +45,7 @@ export default () => (
           <React.Fragment>
             <Fade bottom>
               <div>
-                <Headline Type="h2" colorClassName="text-violett">
+                <Headline Type="h2" colorClassName="text-secondary">
                   Tätigkeiten & Projekte
                 </Headline>
                 <div className="max-w-screen-sm">

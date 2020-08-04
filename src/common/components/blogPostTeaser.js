@@ -9,17 +9,17 @@ export default function BlogPostTeaser({ data, teaserTextSubstringLength }) {
       <div className="p-8 lg:p-16 relative">
         <MultiLink to={data.slug}>
           <h3
-            className="uppercase text-violett text-xl md:text-3xl lg:text-4xl font-serif font-bold leading-normal text-mid-gray."
+            className="uppercase text-secondary text-xl md:text-3xl lg:text-4xl font-sans-serif font-bold leading-normal text-gray"
             style={{
               textShadow:
                 "1px 1px 0 #f4f4f4, 1px -1px 0 #f4f4f4, -1px 1px 0 #f4f4f4, -1px -1px 0 #f4f4f4, 1px 1px 0 #f4f4f4, 0px 1px 0 #f4f4f4, -1px 0px 0 #f4f4f4, 0px -1px 0 #f4f4f4, 1px 1px 0px #f4f4f4",
             }}
           >
             {data.title}
-            <span className="text-green">.</span>
+            <span className="text-primary">.</span>
           </h3>
         </MultiLink>
-        <p className="max-w-screen-sm m-auto text-lg text-mid-gray bg-near-white px-2 mt-12 border-l-4 border-green">
+        <p className="max-w-screen-sm m-auto text-lg text-gray bg-near-white px-2 mt-12 border-l-4 border-primary">
           {/* upcoming teaser fetcher is ugly to the max... urgently fix this by restructuring/extending its contentful implementation */}
           {data?.childContentfulBlogBodyRichTextNode?.json?.content[0]?.content[0]?.value.substring(
             0,

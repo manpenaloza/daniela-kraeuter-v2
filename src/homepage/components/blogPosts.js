@@ -40,7 +40,7 @@ export default function BlogPosts() {
   return (
     <Fade bottom>
       <section className="min-h-screen py-20 container">
-        <Headline Type="h2" colorClassName="text-violett">
+        <Headline Type="h2" colorClassname="text-primary" fontStylesClassname="font-handwritten">
           Aktuelle Blog Beiträge
         </Headline>
         <p className="max-w-screen-sm">

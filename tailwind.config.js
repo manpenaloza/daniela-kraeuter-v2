@@ -7,21 +7,24 @@ module.exports = {
       xl: "1280px",
     },
     fontFamily: {
+      display: ["Railway", "sans-serif"],
+      body: ["Railway", "sans-serif"],
       "sans-serif": [
-        "Karla",
+        "Railway",
         "-apple-system",
         "BlinkMacSystemFont",
         "sans-serif",
       ],
-      serif: ["Lora", "Georgia", "Cambria", "serif"],
+      serif: ["Times", "Georgia", "Cambria", "serif"],
     },
     colors: {
-      green: "rgb(77 146 22)",
-      violett: "rgb(182 0 100)",
-      "near-white": "#f4f4f4",
-      "dark-gray": "#333",
-      "mid-gray": "#555",
-      silver: "#999",
+      primary: "#00A2A4", // before: green
+      "light-primary": "#89BDBD",
+      secondary: "#E89575", // before: violett
+      "near-white": "#F6F7F0", // unchanged
+      "dark-gray": "#A6A2A6", // unchanged
+      "mid-gray": "#D4D0D4", // unchanged
+      silver: "#999", // unchanged
     },
     borderWidth: {
       default: "1px",
@@ -38,6 +41,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        handwritten: ['Great\\ Vibes'],
+      },
       spacing: {
         "96": "24rem",
         "128": "32rem",

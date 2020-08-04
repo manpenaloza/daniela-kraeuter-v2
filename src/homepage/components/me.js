@@ -32,6 +32,14 @@ export default () => {
           }
         }
       }
+      portrait: file(relativePath: { eq: "img/daniela-sohneg-portrait.jpeg" }) {
+        name
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `);
   const { aboutMe, geographicalInfo } = data.contentfulAbout;
@@ -41,10 +49,14 @@ export default () => {
       <div className="min-h-screen py-20 container block lg:flex flex-row justify-around items-start">
         <Fade bottom>
           <div className="flex-1">
-            <Headline Type="h2" colorClassName="text-violett">
+            <Headline
+              Type="h2"
+              colorClassname="text-primary"
+              fontStylesClassname="font-handwritten"
+            >
               Über mich
             </Headline>
-            <div className="block lg:grid grid-cols-2 gap-8">
+            <div className="block lg:grid grid-cols-3 gap-8">
               <ReactMarkdown
                 source={aboutMe.childMarkdownRemark.rawMarkdownBody}
                 renderers={markdownRenderer}
@@ -56,21 +68,25 @@ export default () => {
                 />
                 <MultiLink
                   to="/about/"
-                  className="underline text-green font-sans-serif font-bold tracking-wider mt-5 block"
+                  className="underline text-primary font-sans-serif font-bold tracking-wider mt-5 block"
                 >
                   Mehr Infos (Fotos, Diplomarbeit, etc.)
                 </MultiLink>
               </div>
+              <Fade right>
+                <Img
+                  className="overflow-hidden rounded-lg portrait relative"
+                  fluid={data.portrait.childImageSharp.fluid}
+                />
+              </Fade>
             </div>
           </div>
         </Fade>
-        <Fade right>
-          <div className="hidden lg:block center lg:w-1/4 px-10 lg:self-end">
-            <Pulse duration={3000} forever>
-              <Img fluid={data.logo.childImageSharp.fluid} />
-            </Pulse>
+        {/* <Fade right>
+          <div className="lg:w-1/3 rounded-lg overflow-hidden">
+            <Img fluid={data.portrait.childImageSharp.fluid} />
           </div>
-        </Fade>
+        </Fade> */}
       </div>
     </Section>
   );

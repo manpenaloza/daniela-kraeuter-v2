@@ -5,9 +5,9 @@
 /* NON TAILWIND STYLES */
 
 :root {
-  --primary-violett: rgba(182,0,100);
-  --primary-green: rgba(77, 146, 22);
-  --primary-gray: #555;
+  --primary-orange: #E89575;
+  --primary-turquoise: #00A2A4;
+  --primary-gray: #A6A2A6;
 }
 
 .copyright:before {
@@ -20,15 +20,15 @@
   background: white;
 } 
 
-.main-headline-dot-green:after {
+.main-headline-dot-primary:after {
   content: ".";
-  color: var(--primary-green);
+  color: var(--primary-turquoise);
   display: inline-block;
 }
 
-.main-headline-dot-violett:after {
+.main-headline-dot-secondary:after {
   content: ".";
-  color: var(--primary-violett);
+  color: var(--primary-orange);
   display: inline-block;
 }
 
@@ -36,16 +36,16 @@
   text-shadow: 1px 1px var(--primary-gray);
 }
 
-.text-shadow-violett {
-  text-shadow: 1px 1px var(--primary-violett);
+.text-shadow-secondary {
+  text-shadow: 1px 1px var(--primary-orange);
 }
 
 .hover\:text-shadow-gray:hover {
   text-shadow: 1px 1px var(--primary-gray);
 }
 
-.hover\:text-shadow-violett:hover {
-  text-shadow: 1px 1px var(--primary-violett);
+.hover\:text-shadow-secondary:hover {
+  text-shadow: 1px 1px var(--primary-orange);
 }
 
 .hover\:no-grayscale-filter:hover {
@@ -56,7 +56,7 @@
   filter: grayscale(100%)
 }
 
-/* video hero overlay to get some decent green color filter layed over the video */
+/* video hero overlay to get some decent primary color filter layed over the video */
 .videoContainer::after {
   display: block;
   content: '';
@@ -66,7 +66,7 @@
   top: 0;
   left: 0;
   z-index: 1;
-	background: rgba(57, 135, 0, 0.2);
+	background: rgba(232, 149, 117, 0.1);
 }
 
 .with-blog-post-teaser-overlay::after {
@@ -86,3 +86,15 @@
   left: 55px;
   transform: rotate(-90deg);
 };
+
+.portrait:after {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+	background: rgba(232, 149, 117, 0.1);
+}

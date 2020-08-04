@@ -29,9 +29,10 @@ export default ({ data }) => {
         to={data.featuredPost.slug}
         description="description statically texted"
       />
-      <BlogPosts />
+      
       {/* <Projects /> */}
       <Education />
+      <BlogPosts />
       <About />
     </Layout>
   );

@@ -30,12 +30,12 @@ export default ({ data, location }) => {
         <Paragraph>{children}</Paragraph>
       ),
       [BLOCKS.HEADING_1]: (_node, children) => (
-        <Headline Type="h1" colorClassName="text-violett">
+        <Headline Type="h1" colorClassName="text-secondary">
           {children}
         </Headline>
       ),
       [BLOCKS.HEADING_2]: (_node, children) => (
-        <h2 className="uppercase text-violett text-xl md:text-3xl lg:text-4xl font-serif font-bold leading-normal text-mid-gray.">
+        <h2 className="uppercase text-secondary text-xl md:text-3xl lg:text-4xl font-serif font-bold leading-normal text-mid-gray.">
           {children}
         </h2>
       ),

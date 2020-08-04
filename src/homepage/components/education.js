@@ -41,7 +41,7 @@ export default () => (
         return (
           <React.Fragment>
             <Fade bottom>
-              <Headline Type="h2" colorClassName="text-violett">
+              <Headline Type="h2" colorClassname="text-primary" fontStylesClassname="font-handwritten">
                 Ausbildungen und Diplome
               </Headline>
               <div className="lg:grid grid-cols-2 gap-8">
@@ -55,8 +55,8 @@ export default () => (
                         alt={`Logo ${education.name} - Ausbildung von Daniela Sohneg`}
                       />
                     <Paragraph>{education.description}</Paragraph>
-                    <div className="font-sans-serif mt-8 bg-green text-near-white p-4 rounded-lg">
-                      <span className="text-2xl font-bold">Schwerpunkte:</span>
+                    <div className="font-sans-serif mt-8 bg-primary text-near-white p-4 rounded-lg">
+                      <span className="font-bold">Schwerpunkte:</span>
                       <UnorderedList>
                         {education.mainEmphasis.map((emphasis) => (
                           <ListItem>{emphasis}</ListItem>
@@ -64,7 +64,7 @@ export default () => (
                       </UnorderedList>
                     </div>
                     <div className="text-center mt-8">
-                    <MultiLink to={education.url} target="_blank" className="underline text-green font-sans-serif font-bold tracking-wider">{education.name} Website</MultiLink>
+                    <MultiLink to={education.url} target="_blank" className="underline text-primary font-sans-serif font-bold tracking-wider">{education.name} Website</MultiLink>
                     </div>
                   </article>
                 ))}

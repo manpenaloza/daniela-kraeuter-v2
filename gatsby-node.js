@@ -96,7 +96,6 @@ exports.createPages = ({ graphql, actions }) => {
         // nexb block - new code: don't delete
         const blogPostTemplate = path.resolve("src/blog/blogPostTemplate.js");
         allBlogPosts.forEach(({ node }) => {
-          console.log(node.id);
           createPage({
             path: node.slug,
             component: blogPostTemplate,

@@ -4,20 +4,21 @@ import Fade from "react-reveal/Fade"
 export default ({
   children,
   Type = "h2",
-  colorClassName = "text-mid-gray",
+  colorClassname = "text-mid-gray",
+  fontStylesClassname = "font-sans font-bold",
 }) => {
   const dotClassname = `main-headline-dot-${
-    colorClassName === "text-violett" ? "green" : "violett"
+    colorClassname === "text-secondary" ? "primary" : "secondary"
   }`;
   return (
     <React.Fragment>
       <Type
-        className={`${colorClassName} uppercase text-2xl md:text-4xl lg:text-6xl font-serif font-bold leading-none ${dotClassname}`}
+        className={`${colorClassname} ${fontStylesClassname} text-2xl md:text-4xl lg:text-6xl leading-none ${dotClassname}`}
       >
         {children}
       </Type>
       <Fade right big>
-        <span className="block my-8 w-1/6 h-1 bg-green"></span>
+        <span className="block my-8 w-1/6 h-1 bg-secondary"></span>
       </Fade>
     </React.Fragment>
   );

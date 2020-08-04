@@ -5,7 +5,7 @@ import "tachyons";
 export default (props) => {
   const date = new Date(props.date);
   return (
-    <div className="bg-violett text-near-white px-16 py-20 leading-tight flex flex-column justify-center items-center text-center">
+    <div className="bg-secondary text-near-white px-16 py-20 leading-tight flex flex-column justify-center items-center text-center">
       <span className="font-sans-serif uppercase text-sm">
         {props.category}
       </span>

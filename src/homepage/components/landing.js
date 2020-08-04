@@ -10,8 +10,7 @@ export default () => {
   
   const data = useStaticQuery(graphql`
     query {
-      logo: file(relativePath: { eq: "img/logo.png" }) {
-        name
+      logo: file(relativePath: { eq: "img/logo-extended.png" }) {
         childImageSharp {
           fluid(maxWidth: 768) {
             ...GatsbyImageSharpFluid
@@ -39,7 +38,7 @@ export default () => {
         <div className="textBoxInnerSpacing flex flex-column justify-center text-near-white">
           <Slide left>
             <h1
-              className="uppercase text-4xl md:text-6xl lg:text-8xl font-serif font-bold leading-none"
+              className="font-handwritten text-center xl:text-left text-5xl md:text-6xl lg:text-8xl leading-none"
               style={{
                 marginTop: "initial",
                 marginBottom: "initial",
@@ -47,16 +46,17 @@ export default () => {
             >
               {data.contentfulAbout.name}
             </h1>
-            <h3 className="text-lg lg:text-xl sans-serif my-4 text-shadow leading-normal">
-              Dipl. Kräuterpädagogin & Aromapraktikerin
+            <h3 className="text-lg lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider">
+              Dipl. Aromapraktikerin & Dipl. Kräuterpädagogin
             </h3>
             <div className="flex flex-column lg:flex-row items-center justify-between py-5">
-              <Button.PrimaryWithPageScroll scrollToId="me">
+              <Button.PrimaryWithPageScroll scrollToId="me" colorClassName="bg-light-primary">
                 Über mich
               </Button.PrimaryWithPageScroll>
               <Button.PrimaryWithPageScroll
                 scrollToId="projects"
                 classNames="mt-5 lg:mt-0"
+                colorClassName="bg-light-primary"
               >
                 Tätigkeiten
               </Button.PrimaryWithPageScroll>

@@ -16,7 +16,7 @@ const SliderMenu = (props) => {
   return (
     <div
       className={
-        "flex flex-column justify-center items-center bg-primary-violett fixed top z-max w-100 ease" +
+        "flex flex-column justify-center items-center bg-primary fixed top z-max w-100 ease" +
         (props.active ? " vh-93" : " h0")
       }
     >
@@ -98,8 +98,8 @@ export default class Navbar extends React.Component {
         render={(data) => (
           <React.Fragment>
             <div
-              className="bg-white flex w-100 flex justify-between items-center top-0 z-999 bb b--light-gray"
-              style={{ position: "sticky", height: "60px" }}
+              className="text-gray tracking-wider  bg-near-white flex w-100 flex justify-between items-center top-0 z-999 border-solid border-secondary border-b-2"
+              style={{ position: "sticky", height: "65px" }}
             >
               <div className="flex justify-between lg:justify-around  items-center  w-100 mw8 ph4 pa2-ns">
                 <button
@@ -119,7 +119,7 @@ export default class Navbar extends React.Component {
                   ({ name, ...props }) => (
                     <MultiLink
                       {...props}
-                      className="sans-serif ttu mid-gray f5 no-underline dn dib-l hover:text-shadow-violett cursor-pointer"
+                      className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-secondary cursor-pointer"
                     >
                       {name}
                     </MultiLink>
@@ -129,7 +129,7 @@ export default class Navbar extends React.Component {
               <div className="dn w-100 mw5 flex-l justify-around items-center">
                 <MultiLink
                   to={data.site.siteMetadata.mailChimpUrl}
-                  className="sans-serif ttu color-primary-violett f5 no-underline dn dib-l cursor-pointer"
+                  className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
                 >
                   Kontakt
                 </MultiLink>

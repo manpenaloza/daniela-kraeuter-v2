@@ -1,11 +1,6 @@
 import React, { useRef } from "react";
 
 export default ({ videoSrc, children }) => {
-  const videoElement = useRef(null);
-
-  // useEffect(() => {
-  //   videoElement.current.playbackRate = .5;
-  // }, [])
 
   return (
     <div
@@ -13,14 +8,13 @@ export default ({ videoSrc, children }) => {
       /* upcoming inline style: equals the viewport height minus the navbar height  */
       style={{ minHeight: "calc(100vh - 60px)" }}
     >
-      <div className="absolute top-0 left-0 w-100 h-100 overflow-hidden bg-green bg-center bg-cover bg-no-repeat videoContainer">
+      <div className="absolute top-0 left-0 w-100 h-100 overflow-hidden bg-primary bg-center bg-cover bg-no-repeat videoContainer">
         <video
           className="min-w-full min-h-full absolute top-1/2 left-1/2 object-cover transform -translate-y-1/2 -translate-x-1/2"
           src={videoSrc}
           autoPlay
           muted
           loop
-          ref={videoElement}
         />
       </div>
       {children}
