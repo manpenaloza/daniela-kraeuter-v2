@@ -23,6 +23,7 @@ export default ({ data }) => {
         <Landing />
       </VideoHero>
       <Me />
+      <Education />
       <Teaser
         title={data.featuredPost.title}
         image={data.featuredPost.introImage.fluid}
@@ -31,7 +32,6 @@ export default ({ data }) => {
       />
       
       {/* <Projects /> */}
-      <Education />
       <BlogPosts />
       <About />
     </Layout>

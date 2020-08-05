@@ -56,10 +56,10 @@ export default () => (
                       />
                     <Paragraph>{education.description}</Paragraph>
                     <div className="font-sans-serif mt-8 bg-primary text-near-white p-4 rounded-lg">
-                      <span className="font-bold">Schwerpunkte:</span>
+                      <span className="font-bold block text-center">Schwerpunkte</span>
                       <UnorderedList>
                         {education.mainEmphasis.map((emphasis) => (
-                          <ListItem>{emphasis}</ListItem>
+                          <ListItem className="leading-normal lg:leading-loose">{emphasis}</ListItem>
                         ))}
                       </UnorderedList>
                     </div>

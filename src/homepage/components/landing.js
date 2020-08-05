@@ -38,7 +38,7 @@ export default () => {
         <div className="textBoxInnerSpacing flex flex-column justify-center text-near-white">
           <Slide left>
             <h1
-              className="font-handwritten text-center xl:text-left text-5xl md:text-6xl lg:text-8xl leading-none"
+              className="font-handwritten text-center xl:text-left text-5xl md:text-6xl lg:text-7xl leading-none"
               style={{
                 marginTop: "initial",
                 marginBottom: "initial",
@@ -49,16 +49,16 @@ export default () => {
             <h3 className="text-lg lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider">
               Dipl. Aromapraktikerin & Dipl. Kräuterpädagogin
             </h3>
-            <div className="flex flex-column lg:flex-row items-center justify-between py-5">
+            <div className="flex flex-column xl:flex-row items-center justify-between py-5">
               <Button.PrimaryWithPageScroll scrollToId="me" colorClassName="bg-light-primary">
                 Über mich
               </Button.PrimaryWithPageScroll>
               <Button.PrimaryWithPageScroll
-                scrollToId="projects"
-                classNames="mt-5 lg:mt-0"
+                scrollToId="blogPostMainTeaser"
+                classNames="mt-5 xl:mt-0"
                 colorClassName="bg-light-primary"
               >
-                Tätigkeiten
+                Blog Artikel
               </Button.PrimaryWithPageScroll>
             </div>
           </Slide>
@@ -66,7 +66,7 @@ export default () => {
         <div>
           <Slide right>
             <Img
-              className="w-2/6 md:w-3/6 lg:w-9/12 opacity-85 center"
+              className="w-2/6 md:w-3/6 lg:w-9/12 opacity-90 center"
               alt="Daniela Sohneg Logo"
               fluid={data.logo.childImageSharp.fluid}
             />

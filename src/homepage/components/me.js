@@ -66,16 +66,17 @@ export default () => {
                   source={geographicalInfo.childMarkdownRemark.rawMarkdownBody}
                   renderers={markdownRenderer}
                 />
-                <MultiLink
+                {/* REACTIVATE THIS LINK ONCE THE DEDICATED ABOUT PAGE IS FINISHED 
+                  <MultiLink
                   to="/about/"
-                  className="underline text-primary font-sans-serif font-bold tracking-wider mt-5 block"
-                >
-                  Mehr Infos (Fotos, Diplomarbeit, etc.)
-                </MultiLink>
+                  className="underline text-primary font-sans-serif font-bold tracking-wider leading-normal mt-5 block"
+                > */}
+                  <p className="text-primary font-sans-serif font-bold tracking-wider leading-normal mt-5 block">Mehr Infos<br />(Fotos, Diplomarbeit, etc.)<br />in Kürze!</p>
+                {/* </MultiLink> */}
               </div>
               <Fade right>
                 <Img
-                  className="overflow-hidden rounded-lg portrait relative"
+                  className="overflow-hidden rounded-lg portrait relative mt-10 lg:m-0"
                   fluid={data.portrait.childImageSharp.fluid}
                 />
               </Fade>

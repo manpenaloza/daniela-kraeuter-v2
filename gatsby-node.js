@@ -44,31 +44,34 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors);
         }
+
         // const allPosts = result.data.allPosts.edges;
 
         // next line: new code - don't delete
         const allBlogPosts = result.data.allBlogPosts.edges;
 
         // const groupedPosts = result.data.allPosts.group;
-        const paginationTemplate = path.resolve("src/blog/index.js");
-        const postsPerPage = 5;
-        let numPages = Math.ceil(allBlogPosts.length / postsPerPage);
+        
+        // const paginationTemplate = path.resolve("src/blog/index.js");
+        // const postsPerPage = 5;
+        // let numPages = Math.ceil(allBlogPosts.length / postsPerPage);
 
         // Creating the main blog index
         // code locig secures it's as many 
         // loop iterations as numPages for blog overview pages exist
-        Array.from({ length: numPages }).forEach((_, i) => {
-          createPage({
-            path: i === 0 ? "/blog" : `/blog/${i + 1}`,
-            component: paginationTemplate,
-            context: {
-              limit: postsPerPage,
-              skip: i * postsPerPage,
-              nextPage: `/blog/${i + 2}`,
-              pageNumber: i + 1,
-            },
-          });
-        });
+        
+        // Array.from({ length: numPages }).forEach((_, i) => {
+        //   createPage({
+        //     path: i === 0 ? "/blog" : `/blog/${i + 1}`,
+        //     component: paginationTemplate,
+        //     context: {
+        //       limit: postsPerPage,
+        //       skip: i * postsPerPage,
+        //       nextPage: `/blog/${i + 2}`,
+        //       pageNumber: i + 1,
+        //     },
+        //   });
+        // });
 
         // CATEGORY PAGES NOT NEEDED - Creating all category pages.
         // let category;

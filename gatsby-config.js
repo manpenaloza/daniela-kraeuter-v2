@@ -4,8 +4,8 @@ module.exports = {
   siteMetadata: {
     navbarLinks: [
       { scrollToId: "me", name: "Über mich" },
-      { scrollToId: "projects", name: "Projekte & Aktuelles" },
-      { to: "/blog", name: "blog" },
+      { scrollToId: "education", name: "Ausbildung" },
+      { scrollToId: "blogPostMainTeaser", name: "Blog" },
     ],
     title: "Daniela Sohneg",
     description:

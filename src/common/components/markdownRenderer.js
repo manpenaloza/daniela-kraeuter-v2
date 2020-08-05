@@ -9,8 +9,8 @@ const StyledMarkdownList = ({ children }) => {
   return <ul className="list-disc list-inside">{children}</ul>;
 };
 
-const StyledMarkdownListItem = ({ children }) => {
-  return <li>{children}</li>;
+const StyledMarkdownListItem = ({ children, className }) => {
+  return <li className={`mb-2 ${className}`} style={{ textIndent: "-1.4em", paddingLeft: "1.4em" }}>{children}</li>;
 };
 
 const MarkdownLink = ({ href, children }) => (

@@ -82,7 +82,7 @@ export default ({ data, location }) => {
           desc={metaDescription}
           location={location.pathname}
         />
-        <Suggested />
+        {/* <Suggested /> */}
       </article>
     </Layout>
   );

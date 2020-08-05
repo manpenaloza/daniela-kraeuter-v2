@@ -5,9 +5,10 @@
 /* NON TAILWIND STYLES */
 
 :root {
-  --primary-orange: #E89575;
   --primary-turquoise: #00A2A4;
-  --primary-gray: #A6A2A6;
+  --primary-turquoise-light: #89BDBD;
+  --secondary-orange: #E89575;
+  --gray: #A6A2A6;
 }
 
 .copyright:before {
@@ -28,24 +29,28 @@
 
 .main-headline-dot-secondary:after {
   content: ".";
-  color: var(--primary-orange);
+  color: var(--secondary-orange);
   display: inline-block;
 }
 
 .text-shadow-gray {
-  text-shadow: 1px 1px var(--primary-gray);
+  text-shadow: 1px 1px var(--gray);
 }
 
 .text-shadow-secondary {
-  text-shadow: 1px 1px var(--primary-orange);
+  text-shadow: 1px 1px var(--secondary-orange);
 }
 
 .hover\:text-shadow-gray:hover {
-  text-shadow: 1px 1px var(--primary-gray);
+  text-shadow: 1px 1px var(--gray);
 }
 
 .hover\:text-shadow-secondary:hover {
-  text-shadow: 1px 1px var(--primary-orange);
+  text-shadow: 1px 1px var(--secondary-orange);
+}
+
+.hover\:text-shadow-primary-light:hover {
+  text-shadow: 1px 1px var(--primary-turquoise-light);
 }
 
 .hover\:no-grayscale-filter:hover {

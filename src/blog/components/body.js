@@ -18,6 +18,6 @@ export default props => (
       desc={props.description}
       location={props.location}
     />
-    <Suggested />
+    {/* <Suggested /> */}
   </div>
 )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 import Img from "gatsby-image";
@@ -23,7 +23,7 @@ const SliderMenu = (props) => {
       <MultiLink
         to="/"
         className={
-          "display ttu tracked white f2 no-underline menu__item pv5" +
+          "font-sans-serif display ttu tracked white f2 no-underline menu__item" +
           extraClasses
         }
       >
@@ -34,7 +34,8 @@ const SliderMenu = (props) => {
         <MultiLink
           {...props}
           className={
-            "sans-serif ttu white f4 no-underline menu__item pv3" + extraClasses
+            "font-sans-serif ttu white f4 no-underline menu__item pv3" +
+            extraClasses
           }
         >
           {name}
@@ -44,7 +45,8 @@ const SliderMenu = (props) => {
       <MultiLink
         scrollToId="me"
         className={
-          "sans-serif ttu white f4 no-underline menu__item pv3" + extraClasses
+          "font-sans-serif ttu white f4 no-underline menu__item pv3" +
+          extraClasses
         }
       >
         About
@@ -53,103 +55,82 @@ const SliderMenu = (props) => {
   );
 };
 
-export default class Navbar extends React.Component {
-  constructor(props) {
-    super();
-    this.state = {
-      // Null rather than false to check for initialization
-      menuToggle: null,
-    };
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isMobile = window.innerWidth < 960;
+  const isHomepage = window.location.pathname === '/';
 
-  toggleMenu(event) {
-    this.setState({
-      menuToggle: !this.state.menuToggle,
-    });
-  }
-
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            logo: file(relativePath: { eq: "img/logo.png" }) {
-              name
-              childImageSharp {
-                fixed(height: 45) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            site {
-              siteMetadata {
-                navbarLinks {
-                  to
-                  scrollToId
-                  name
-                }
-                siteTitle: title
-                mailChimpUrl
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          logo: file(relativePath: { eq: "img/logo.png" }) {
+            name
+            childImageSharp {
+              fixed(height: 45) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
-        `}
-        render={(data) => (
+          site {
+            siteMetadata {
+              navbarLinks {
+                scrollToId
+                name
+              }
+              siteTitle: title
+              mailChimpUrl
+            }
+          }
+        }
+      `}
+      render={(data) => {
+        return (
           <React.Fragment>
             <div
-              className="text-gray tracking-wider  bg-near-white flex w-100 flex justify-between items-center top-0 z-999 border-solid border-secondary border-b-2"
+              className="px-10 py-4 tracking-wider bg-near-white flex justify-between items-center top-0 z-50 border-solid border-secondary border-b-2"
               style={{ position: "sticky", height: "65px" }}
             >
-              <div className="flex justify-between lg:justify-around  items-center  w-100 mw8 ph4 pa2-ns">
+              {isMobile && isHomepage && (
                 <button
                   className="ttu tracked dark-gray f4 no-underline bn bg-transparent pointer"
-                  onClick={this.toggleMenu}
+                  onClick={() => setMenuOpen(!menuOpen)}
                 >
                   <FiMenu />
                 </button>
-                <MultiLink to="/" className="cursor-pointer">
-                  <Img
-                    className=""
-                    alt=""
-                    fixed={data.logo.childImageSharp.fixed}
-                  />
-                </MultiLink>
-                {data.site.siteMetadata.navbarLinks.map(
-                  ({ name, ...props }) => (
-                    <MultiLink
-                      {...props}
-                      className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-secondary cursor-pointer"
-                    >
-                      {name}
-                    </MultiLink>
-                  )
-                )}
-              </div>
-              <div className="dn w-100 mw5 flex-l justify-around items-center">
-                <MultiLink
-                  to={data.site.siteMetadata.mailChimpUrl}
-                  className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
-                >
-                  Kontakt
-                </MultiLink>
-                {/* <span className="sans-serif mid-gray dn dib-l">|</span> */}
-                {/* <Link
-                  to="/about"
-                  className="sans-serif ttu mid-gray f5 no-underline dn dib-l"
-                >
-                  Newsletter
-                </Link> */}
-              </div>
+              )}
+              <MultiLink to="/" className="cursor-pointer">
+                <Img
+                  alt="Logo Symbol von Daniela Sohneg"
+                  fixed={data.logo.childImageSharp.fixed}
+                />
+              </MultiLink>
+              {isHomepage &&
+                data.site.siteMetadata.navbarLinks.map(({ name, ...props }) => (
+                  <MultiLink
+                    {...props}
+                    className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-primary-light  cursor-pointer"
+                  >
+                    {name}
+                  </MultiLink>
+                ))}
+              <MultiLink
+                to="mailto:daniela.sohneg@gmail.com"
+                className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
+              >
+                Kontakt
+              </MultiLink>
             </div>
             <SliderMenu
-              active={this.state.menuToggle}
+              active={menuOpen}
               extraLinks={data.site.siteMetadata.navbarLinks}
               siteTitle={data.site.siteMetadata.siteTitle}
             />
           </React.Fragment>
-        )}
-      />
-    );
-  }
-}
+        );
+      }}
+    />
+  );
+};
+
+export default Navbar;

@@ -2,6 +2,7 @@ import React from "react";
 import MultiLink from "gatsby-universal-link";
 import Img from "gatsby-image";
 import Button from "./button";
+import { Section } from "react-scroll-section";
 
 export default function BlogPostTeaser({ data, teaserTextSubstringLength }) {
   return (

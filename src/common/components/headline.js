@@ -13,7 +13,7 @@ export default ({
   return (
     <React.Fragment>
       <Type
-        className={`${colorClassname} ${fontStylesClassname} text-2xl md:text-4xl lg:text-6xl leading-none ${dotClassname}`}
+        className={`${colorClassname} ${fontStylesClassname} text-5xl lg:text-7xl leading-none ${dotClassname}`}
       >
         {children}
       </Type>

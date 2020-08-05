@@ -20,7 +20,7 @@ export default ({ location }) => {
   return (
     <div className="hidden md:block" style={{ gridArea: "sidebar" }}>
       <div
-        className="w-16 bg-dark-gray flex flex-wrap"
+        className="w-16 bg-primary flex flex-wrap"
         style={{ position: "sticky", top: "3.5rem" }}
       >
         <a
