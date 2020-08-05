@@ -20,7 +20,7 @@ const SliderMenu = (props) => {
         "flex flex-column justify-center items-center bg-primary fixed top z-max w-100 ease" +
         (props.active ? " vh-93" : " h0")
       }
-      onClick={() => props.menuState.setMenuOpen(false)}
+      onClick={() => props.menuToggle(false)}
     >
       <MultiLink
         to="/"
@@ -31,7 +31,7 @@ const SliderMenu = (props) => {
       >
         <Img
           alt="Daniela Sohneg Logo - Kräuterpädagogin und Aromapraktikerin"
-          fixed={props.logo.fixed}
+          fixed={props.logoExtendedAsGatsbyImage}
         />
       </MultiLink>
 
@@ -56,87 +56,81 @@ const Navbar = () => {
   const isMobile = window.innerWidth < 960;
   const isHomepage = window.location.pathname === "/";
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          logo: file(relativePath: { eq: "img/logo.png" }) {
-            name
-            childImageSharp {
-              fixed(height: 45) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-          logoExtended: file(relativePath: { eq: "img/logo-extended.png" }) {
-            name
-            childImageSharp {
-              fixed(width: 250, fit: CONTAIN) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-          site {
-            siteMetadata {
-              navbarLinks {
-                scrollToId
-                name
-              }
-              siteTitle: title
-              mailChimpUrl
-            }
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "img/logo.png" }) {
+        name
+        childImageSharp {
+          fixed(height: 45) {
+            ...GatsbyImageSharpFixed
           }
         }
-      `}
-      render={(data) => {
-        return (
-          <React.Fragment>
-            <div
-              className="px-10 py-4 tracking-wider bg-near-white flex justify-between items-center top-0 z-50 border-solid border-secondary border-b-2"
-              style={{ position: "sticky", height: "65px" }}
+      }
+      logoExtended: file(relativePath: { eq: "img/logo-extended.png" }) {
+        name
+        childImageSharp {
+          fixed(width: 250, fit: CONTAIN) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          navbarLinks {
+            scrollToId
+            name
+          }
+          siteTitle: title
+          mailChimpUrl
+        }
+      }
+    }
+  `);
+
+  return (
+    <React.Fragment>
+      <div
+        className="px-10 py-4 tracking-wider bg-near-white flex justify-between items-center top-0 z-50 border-solid border-secondary border-b-2"
+        style={{ position: "sticky", height: "65px" }}
+      >
+        {isMobile && isHomepage && (
+          <button
+            className="ttu tracked dark-gray f4 no-underline bn bg-transparent pointer"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <FiMenu />
+          </button>
+        )}
+        <MultiLink to="/" className="cursor-pointer">
+          <Img
+            alt="Logo Symbol von Daniela Sohneg"
+            fixed={data.logo.childImageSharp.fixed}
+          />
+        </MultiLink>
+        {isHomepage &&
+          data.site.siteMetadata.navbarLinks.map(({ name, ...props }) => (
+            <MultiLink
+              key={name}
+              {...props}
+              className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-primary-light  cursor-pointer"
             >
-              {isMobile && isHomepage && (
-                <button
-                  className="ttu tracked dark-gray f4 no-underline bn bg-transparent pointer"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                >
-                  <FiMenu />
-                </button>
-              )}
-              <MultiLink to="/" className="cursor-pointer">
-                <Img
-                  alt="Logo Symbol von Daniela Sohneg"
-                  fixed={data.logo.childImageSharp.fixed}
-                />
-              </MultiLink>
-              {isHomepage &&
-                data.site.siteMetadata.navbarLinks.map(({ name, ...props }) => (
-                  <MultiLink
-                    key={name}
-                    {...props}
-                    className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-primary-light  cursor-pointer"
-                  >
-                    {name}
-                  </MultiLink>
-                ))}
-              <MultiLink
-                to="mailto:daniela.sohneg@gmail.com"
-                className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
-              >
-                Kontakt
-              </MultiLink>
-            </div>
-            <SliderMenu
-              active={menuOpen}
-              menuState={{ menuOpen, setMenuOpen }}
-              extraLinks={data.site.siteMetadata.navbarLinks}
-              siteTitle={data.site.siteMetadata.siteTitle}
-              logo={data.logoExtended.childImageSharp}
-            />
-          </React.Fragment>
-        );
-      }}
-    />
+              {name}
+            </MultiLink>
+          ))}
+        <MultiLink
+          to="mailto:daniela.sohneg@gmail.com"
+          className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
+        >
+          Kontakt
+        </MultiLink>
+      </div>
+      <SliderMenu
+        active={menuOpen}
+        menuToggle={setMenuOpen}
+        extraLinks={data.site.siteMetadata.navbarLinks}
+        logoExtendedAsGatsbyImage={data.logoExtended.childImageSharp.fixed}
+      />
+    </React.Fragment>
   );
 };
 
