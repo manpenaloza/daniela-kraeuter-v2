@@ -55,7 +55,7 @@ export default function BlogPosts() {
         </p>
         <div className="max-w-screen-lg flex flex-column items-stretch justify-start m-auto">
           {blogPostTeasers.map(({ node: blogPostTeaser }) => (
-            <Fade bottom>
+            <Fade bottom key={blogPostTeaser.id}>
               <BlogPostTeaser
                 data={blogPostTeaser}
                 key={blogPostTeaser.id}

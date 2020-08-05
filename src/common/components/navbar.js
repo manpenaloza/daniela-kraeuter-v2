@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql, useStaticQuery } from "gatsby";
 import { FiMenu } from "react-icons/fi";
 import Img from "gatsby-image";
 import "../styles/custom.tachyons.css";
@@ -13,26 +13,32 @@ const SliderMenu = (props) => {
   } else {
     extraClasses = props.active ? " fadeIn" : " fadeOut";
   }
+
   return (
     <div
       className={
         "flex flex-column justify-center items-center bg-primary fixed top z-max w-100 ease" +
         (props.active ? " vh-93" : " h0")
       }
+      onClick={() => props.menuState.setMenuOpen(false)}
     >
       <MultiLink
         to="/"
         className={
-          "font-sans-serif display ttu tracked white f2 no-underline menu__item" +
+          "font-sans-serif display ttu tracked white f2 no-underline menu__item transform -translate-y-12" +
           extraClasses
         }
       >
-        {props.siteTitle}
+        <Img
+          alt="Daniela Sohneg Logo - Kräuterpädagogin und Aromapraktikerin"
+          fixed={props.logo.fixed}
+        />
       </MultiLink>
 
       {props.extraLinks.map(({ name, ...props }) => (
         <MultiLink
           {...props}
+          key={name}
           className={
             "font-sans-serif ttu white f4 no-underline menu__item pv3" +
             extraClasses
@@ -41,16 +47,6 @@ const SliderMenu = (props) => {
           {name}
         </MultiLink>
       ))}
-
-      <MultiLink
-        scrollToId="me"
-        className={
-          "font-sans-serif ttu white f4 no-underline menu__item pv3" +
-          extraClasses
-        }
-      >
-        About
-      </MultiLink>
     </div>
   );
 };
@@ -58,7 +54,7 @@ const SliderMenu = (props) => {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isMobile = window.innerWidth < 960;
-  const isHomepage = window.location.pathname === '/';
+  const isHomepage = window.location.pathname === "/";
 
   return (
     <StaticQuery
@@ -68,6 +64,14 @@ const Navbar = () => {
             name
             childImageSharp {
               fixed(height: 45) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+          logoExtended: file(relativePath: { eq: "img/logo-extended.png" }) {
+            name
+            childImageSharp {
+              fixed(width: 250, fit: CONTAIN) {
                 ...GatsbyImageSharpFixed
               }
             }
@@ -108,6 +112,7 @@ const Navbar = () => {
               {isHomepage &&
                 data.site.siteMetadata.navbarLinks.map(({ name, ...props }) => (
                   <MultiLink
+                    key={name}
                     {...props}
                     className="sans-serif ttu f5 no-underline dn dib-l hover:text-shadow-primary-light  cursor-pointer"
                   >
@@ -123,8 +128,10 @@ const Navbar = () => {
             </div>
             <SliderMenu
               active={menuOpen}
+              menuState={{ menuOpen, setMenuOpen }}
               extraLinks={data.site.siteMetadata.navbarLinks}
               siteTitle={data.site.siteMetadata.siteTitle}
+              logo={data.logoExtended.childImageSharp}
             />
           </React.Fragment>
         );

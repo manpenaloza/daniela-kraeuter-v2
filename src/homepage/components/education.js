@@ -35,7 +35,6 @@ export default () => (
         }
       `}
       render={(data) => {
-        console.log(data);
         const { edges } = data.allContentfulAusbildung;
 
         return (
@@ -46,7 +45,7 @@ export default () => (
               </Headline>
               <div className="lg:grid grid-cols-2 gap-8">
                 {edges.map(({ node: education }) => (
-                  <article>
+                  <article key={education.name}>
                       <Img
                         fluid={education.logo.fluid}
                         objectFit="contain"
@@ -59,7 +58,7 @@ export default () => (
                       <span className="font-bold block text-center">Schwerpunkte</span>
                       <UnorderedList>
                         {education.mainEmphasis.map((emphasis) => (
-                          <ListItem className="leading-normal lg:leading-loose">{emphasis}</ListItem>
+                          <ListItem className="leading-normal lg:leading-loose" key={emphasis}>{emphasis}</ListItem>
                         ))}
                       </UnorderedList>
                     </div>
