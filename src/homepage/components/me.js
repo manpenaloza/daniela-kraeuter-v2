@@ -76,7 +76,7 @@ export default () => {
               </div>
               <Fade right>
                 <Img
-                  className="overflow-hidden rounded-lg portrait relative mt-10 lg:m-0"
+                  className="overflow-hidden rounded-lg portrait relative mt-10 lg:m-0 border-secondary border-4 shadow-2xl"
                   fluid={data.portrait.childImageSharp.fluid}
                 />
               </Fade>
