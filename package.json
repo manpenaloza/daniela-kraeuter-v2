@@ -36,7 +36,7 @@
     "react-reveal": "^1.2.2",
     "react-scroll-section": "^2.1.0",
     "tachyons": "^4.12.0",
-    "use-is-scrolled": "0.0.1"
+    "use-is-scrolled": "0.0.2"
   },
   "devDependencies": {
     "tailwindcss": "^1.6.2"
