@@ -115,12 +115,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "UA-149375695-1",
         head: false,
         anonymize: true,
         respectDNT: true,
         exclude: ["/success"],
-        cookieDomain: "tyra-starter.netlify.com",
+        cookieDomain: "daniela-sohneg.at",
       },
     },
     'gatsby-plugin-postcss',
