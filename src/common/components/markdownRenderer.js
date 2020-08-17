@@ -2,11 +2,11 @@ import React from "react";
 import MultiLink from "gatsby-universal-link";
 
 const StyledMarkdownParagraph = ({ children }) => (
-  <p className="text-lg font-sans-serif">{children}</p>
+  <p className="text-lg font-sans-serif mb-4">{children}</p>
 );
 
 const StyledMarkdownList = ({ children }) => {
-  return <ul className="list-disc list-inside">{children}</ul>;
+  return <ul className="list-disc list-inside font-sans-serif">{children}</ul>;
 };
 
 const StyledMarkdownListItem = ({ children, className }) => {

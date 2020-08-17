@@ -35,7 +35,7 @@ export default ({ data, location }) => {
         </Headline>
       ),
       [BLOCKS.HEADING_2]: (_node, children) => (
-        <h2 className="uppercase text-secondary text-xl md:text-3xl lg:text-4xl font-serif font-bold leading-normal text-mid-gray.">
+        <h2 className="mt-8 uppercase text-secondary text-lg md:text-2xl lg:text-3xl font-sans-serif leading-normal text-mid-gray.">
           {children}
         </h2>
       ),
@@ -69,7 +69,7 @@ export default ({ data, location }) => {
       <article className="min-vh-100 blog__grid">
         <div style={{ gridArea: "header" }} />
         <div
-          className="mw8 serif f4 lh-copy center pa2 article__container"
+          className="leading-loose mw8 f4 lh-copy center pa2 container"
           style={{ gridArea: "content" }}
         >
           {documentToReactComponents(

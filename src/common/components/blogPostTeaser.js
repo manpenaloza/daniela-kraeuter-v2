@@ -10,7 +10,7 @@ export default function BlogPostTeaser({ data, teaserTextSubstringLength }) {
       <div className="p-8 lg:p-16 relative">
         <MultiLink to={data.slug}>
           <h3
-            className="uppercase text-secondary text-xl md:text-3xl lg:text-4xl font-sans-serif font-bold leading-normal text-gray"
+            className="uppercase text-primary text-xl md:text-3xl lg:text-4xl font-sans-serif font-bold leading-normal text-gray"
             style={{
               textShadow:
                 "1px 1px 0 #f4f4f4, 1px -1px 0 #f4f4f4, -1px 1px 0 #f4f4f4, -1px -1px 0 #f4f4f4, 1px 1px 0 #f4f4f4, 0px 1px 0 #f4f4f4, -1px 0px 0 #f4f4f4, 0px -1px 0 #f4f4f4, 1px 1px 0px #f4f4f4",
