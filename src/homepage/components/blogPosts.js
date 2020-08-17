@@ -35,7 +35,7 @@ export default function BlogPosts() {
     }
   `);
 
-  const teaserTextSubstringLength = window.innerWidth < 640 ? 180 : 280;
+  const teaserTextSubstringLength = typeof window !== 'undefined' && window.innerWidth < 640 ? 180 : 280;
 
   return (
     <Fade bottom>

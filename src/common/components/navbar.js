@@ -53,8 +53,8 @@ const SliderMenu = (props) => {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = window.innerWidth < 960;
-  const isHomepage = window.location.pathname === "/";
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 960;
+  const isHomepage = typeof window !== 'undefined' && window.location.pathname === "/";
 
   const data = useStaticQuery(graphql`
     query {
