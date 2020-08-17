@@ -10,7 +10,7 @@ export default function BlogPosts() {
     allContentfulBlog: { edges: blogPostTeasers },
   } = useStaticQuery(graphql`
     query {
-      allContentfulBlog(limit: 2, skip: 1) {
+      allContentfulBlog(limit: 3, skip: 1) {
         edges {
           node {
             id
