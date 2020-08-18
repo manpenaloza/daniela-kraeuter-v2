@@ -40,11 +40,11 @@ export default ({ data, location }) => {
         </h2>
       ),
       [BLOCKS.UL_LIST]: (_node, children) => (
-        <UnorderedList>{children}</UnorderedList>
+        <UnorderedList className="text-lg">{children}</UnorderedList>
       ),
       // upcoming usage of node itself is a dirty hack as contentful ships the <li> contents as a Paragraph, which leads to broken styles
       [BLOCKS.LIST_ITEM]: (node, children) => (
-        <ListItem>{node.content[0]?.content[0]?.value}</ListItem>
+        <ListItem className="text-lg">{node.content[0]?.content[0]?.value}</ListItem>
       ),
     },
   };
