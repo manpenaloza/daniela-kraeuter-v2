@@ -132,5 +132,11 @@ module.exports = {
         downloadLocal: true
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/impressum/`],
+      },
+    }
   ],
 };
