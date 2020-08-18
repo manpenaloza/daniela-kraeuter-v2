@@ -47,7 +47,7 @@ export default () => {
               {data.contentfulAbout.name}
             </h1>
             <h3 className="text-lg lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider text-center">
-              Dipl. Aromapraktikerin &<br /> Dipl. Kräuterpädagogin
+              Dipl. Aromapraktikerin & Dipl. Kräuterpädagogin
             </h3>
             <div className="flex flex-column xl:flex-row items-center justify-between py-5">
               <Button.PrimaryWithPageScroll scrollToId="me" colorClassName="bg-light-primary">

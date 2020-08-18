@@ -11,7 +11,7 @@ export default (props) => {
   return (
     <React.Fragment>
       <Helmet>
-        <body className="bg-near-white text-dark-gray" />
+        <body className="text-dark-gray" />
       </Helmet>
       <ScrollingProvider>
         <Navbar />
