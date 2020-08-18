@@ -16,7 +16,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <Seo
-        title={"Home Page"}
+        title={"Daniela Sohneg - ♨️ Aromapraktikerin & 🌿 Kräuterpädagogin aus Kirchbach in der Steiermark"}
         description={data.site.siteMetadata.description}
       />
       <VideoHero videoSrc="./kraeuterwanderung.mp4">

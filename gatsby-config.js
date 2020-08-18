@@ -9,7 +9,7 @@ module.exports = {
     ],
     title: "Daniela Sohneg",
     description:
-      "🌿 Diplomierte Kräuterpädagogin aus Kirchbach in der Steiermark. ✨ Kräuterwanderungen in der Südoststeiermark/Weiz/Feldbach/Leibnitz und Umgebung sowie Workshops zur Herstellung von Tinkturen, Naturkosmetik und anderen Kräuterprodukten.",
+      "🌿 Aromapraktikerin & Kräuterpädagogin aus Kirchbach in der Steiermark. ✨ Aromafachberatungen, Wissen rund um ätherische Öle,  Kräuterwanderungen in der Südoststeiermark/Weiz/Feldbach/Leibnitz und Umgebung sowie Workshops zur Herstellung von Tinkturen, Naturkosmetik und anderen Kräuterprodukten.",
     siteUrl: "https://daniela-sohneg.at",
     homepageHeader: "Hallo! Mein Name ist Daniela Sohneg.",
     homepageAbout:

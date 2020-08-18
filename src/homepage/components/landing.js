@@ -13,7 +13,7 @@ export default () => {
       logo: file(relativePath: { eq: "img/logo-extended.png" }) {
         childImageSharp {
           fluid(maxWidth: 768) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
