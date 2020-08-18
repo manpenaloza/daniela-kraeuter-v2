@@ -71,7 +71,7 @@ export default () => {
                   to="/about/"
                   className="underline text-primary font-sans-serif font-bold tracking-wider leading-normal mt-5 block"
                 > */}
-                  <p className="text-primary font-sans-serif font-bold tracking-wider leading-normal mt-5 block">Mehr Infos<br />(Fotos, Diplomarbeit, etc.)<br />in Kürze!</p>
+                  <p className="text-primary font-sans-serif font-bold tracking-wider leading-normal mt-5 block">Mehr Infos in Kürze!</p>
                 {/* </MultiLink> */}
               </div>
               <Fade right>
