@@ -40,6 +40,6 @@
     "use-is-scrolled": "0.0.2"
   },
   "devDependencies": {
-    "tailwindcss": "^1.6.2"
+    "tailwindcss": "^1.6.3"
   }
 }
