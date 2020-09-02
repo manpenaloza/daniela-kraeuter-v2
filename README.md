@@ -48,11 +48,6 @@ Next up, you can begin customizing the images and copy in `content/`. Finally, y
 ## To build
 `yarn build`
 
-
-## Screenshot
-
-![Screenshot of Tyra Homepage](./screenshot.jpg)
-
 ## Adding your Content
 
 Tyra uses markdown for writing blog posts, and follows a simple template for adding new posts. To add a new blog post, create a file in `content/posts/` with the following:
