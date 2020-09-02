@@ -26,13 +26,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sitemap",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-        icon: "content/img/logo.png"
-      }
-    },
     {
       resolve: "gatsby-plugin-feed",
       options: {
@@ -135,6 +130,18 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Daniela Sohneg - Diplomierte Aromapraktikerin & Diplomierte Kräuterpädagogin`,
+        short_name: `Daniela Sohneg`,
+        start_url: `/`,
+        background_color: `#00A2A4`,
+        theme_color: `#E89575`,
+        display: `standalone`,
+        icon: `content/img/logo.png`
       },
     },
     {

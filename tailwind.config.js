@@ -18,13 +18,13 @@ module.exports = {
       serif: ['Playfair\\ Display', "Times", "Georgia", "Cambria", "serif"],
     },
     colors: {
-      primary: "#00A2A4", // before: green
+      primary: "#00A2A4",
       "light-primary": "#89BDBD",
-      secondary: "#E89575", // before: violett
-      "near-white": "#F6F7F0", // unchanged
-      "dark-gray": "#A6A2A6", // unchanged
-      "mid-gray": "#D4D0D4", // unchanged
-      silver: "#999", // unchanged
+      secondary: "#E89575",
+      "near-white": "#F6F7F0",
+      "dark-gray": "#A6A2A6",
+      "mid-gray": "#D4D0D4",
+      silver: "#999",
     },
     borderWidth: {
       default: "1px",
