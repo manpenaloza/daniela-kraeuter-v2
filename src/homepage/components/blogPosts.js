@@ -43,7 +43,7 @@ export default function BlogPosts() {
         <Headline
           Type="h2"
           colorClassname="text-primary"
-          fontStylesClassname="font-handwritten"
+          fontStylesClassname="font-serif"
         >
           Aktuelle Blog Beiträge
         </Headline>

@@ -108,7 +108,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Great Vibes", "Railway"],
+          families: ["Playfair Display", "Source Sans Pro"],
         },
       },
     },

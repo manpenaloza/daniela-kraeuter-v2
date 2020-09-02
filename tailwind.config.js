@@ -7,15 +7,15 @@ module.exports = {
       xl: "1280px",
     },
     fontFamily: {
-      display: ["Railway", "sans-serif"],
-      body: ["Railway", "sans-serif"],
+      display: ['Source\\ Sans\\ Pro', "sans-serif"],
+      body: ['Source\\ Sans\\ Pro', "sans-serif"],
       "sans-serif": [
-        "Railway",
+        'Source\\ Sans\\ Pro',
         "-apple-system",
         "BlinkMacSystemFont",
         "sans-serif",
       ],
-      serif: ["Times", "Georgia", "Cambria", "serif"],
+      serif: ['Playfair\\ Display', "Times", "Georgia", "Cambria", "serif"],
     },
     colors: {
       primary: "#00A2A4", // before: green
@@ -42,7 +42,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        handwritten: ['Great\\ Vibes'],
+        handwritten: ['Playfair\\ Display'],
       },
       spacing: {
         "96": "24rem",
