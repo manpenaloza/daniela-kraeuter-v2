@@ -4,10 +4,11 @@ import useIsScrolled from "use-is-scrolled";
 import Slide from "react-reveal/Slide";
 import Img from "gatsby-image";
 import Button from "../../common/components/button";
+import LandingHeroLetteringSVG from "./../../../content/img/landing-hero-lettering.svg";
 
 export default () => {
   const isScrolled = useIsScrolled();
-  
+
   const data = useStaticQuery(graphql`
     query {
       logo: file(relativePath: { eq: "img/logo-extended.png" }) {
@@ -37,20 +38,18 @@ export default () => {
       >
         <div className="textBoxInnerSpacing flex flex-column justify-center text-near-white">
           <Slide left>
-            <h1
-              className="font-handwritten text-center xl:text-left text-5xl md:text-6xl lg:text-7xl leading-none"
-              style={{
-                marginTop: "initial",
-                marginBottom: "initial",
-              }}
-            >
-              {data.contentfulAbout.name}
-            </h1>
-            <h3 className="text-lg lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider text-center">
+            <img
+              src={LandingHeroLetteringSVG}
+              className="w-full"
+            />
+            <h1 className="text-lg md:text-xl lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider text-center">
               Dipl. Aromapraktikerin & Dipl. Kräuterpädagogin
-            </h3>
+            </h1>
             <div className="flex flex-column xl:flex-row items-center justify-between py-5">
-              <Button.PrimaryWithPageScroll scrollToId="me" colorClassName="bg-light-primary">
+              <Button.PrimaryWithPageScroll
+                scrollToId="me"
+                colorClassName="bg-light-primary"
+              >
                 Über mich
               </Button.PrimaryWithPageScroll>
               <Button.PrimaryWithPageScroll
