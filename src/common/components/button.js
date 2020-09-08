@@ -40,3 +40,5 @@ export default {
   PrimaryWithPageScroll: PrimaryButtonWithPageScroll,
   PrimaryWithPageChange: PrimaryButtonWithPageChange,
 };
+
+export { btnPrimaryClassNames };

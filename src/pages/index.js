@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../common/layouts";
 import { graphql } from "gatsby";
 import Teaser from "../homepage/components/teaser";
-import About from "../homepage/components/about";
+import Contact from "../homepage/components/contact";
 import Me from "../homepage/components/me";
 import Projects from "../homepage/components/projects";
 import Seo from "../common/seo";
@@ -33,7 +33,7 @@ export default ({ data }) => {
       
       {/* <Projects /> */}
       <BlogPosts />
-      <About />
+      <Contact />
     </Layout>
   );
 };
