@@ -1,8 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import { btnPrimaryClassNames } from "../../common/components/button";
-import { Section } from 'react-scroll-section';
-
+import { Section } from "react-scroll-section";
 
 const inputClassnames =
   "bg-near-white w-full py-3 my-2 lg:my-4 lg:py-4 px-6 text-xl rounded-lg shadow-inner border-solid border-light-primary text-dark-gray border-2";
@@ -21,7 +20,7 @@ export default () => (
     `}
     render={(data) => (
       <Section id="contact">
-         <div className="bg-secondary flex flex-column justify-center items-center px-10 py-20 text-near-white leading-relaxed text-center">
+        <div className="bg-secondary flex flex-column justify-center items-center px-10 py-20 text-near-white leading-relaxed text-center">
           <p className="text-xl md:text-2xl lg:text-3xl max-w-screen-sm xl:max-w-screen-md font-sans-serif">
             {data.site.siteMetadata.homepageAbout} Sie haben Fragen zu meinen
             Workshops, Einzelbetreuungen oder sonstigem? Kontaktieren Sie mich!
@@ -35,18 +34,21 @@ export default () => (
                   name="name"
                   placeholder="Deine Name"
                   className={`${inputClassnames} lg:mr-4`}
+                  required
                 />
                 <input
                   type="email"
                   name="_replyto"
                   placeholder="Deine E-Mail Adresse"
                   className={`${inputClassnames} lg:ml-4`}
+                  required
                 />
               </div>
               <textarea
                 name="message"
                 placeholder="Was kann ich für dich tun?"
                 className={`${inputClassnames} h-32 lg:h-64`}
+                required
               />
               <input
                 type="submit"

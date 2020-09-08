@@ -52,7 +52,6 @@ export default () => {
             <Headline
               Type="h2"
               colorClassname="text-primary"
-              fontStylesClassname="font-handwritten"
             >
               Über mich
             </Headline>

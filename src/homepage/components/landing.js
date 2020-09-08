@@ -26,10 +26,10 @@ export default () => {
 
   return (
     <section
-      className="flex items-center justify-center"
+    className="text-center"
       style={{
         zIndex: 2,
-        textAlign: "center",
+        minWidth: "80%"
       }}
     >
       <div
@@ -42,8 +42,8 @@ export default () => {
               src={LandingHeroLetteringSVG}
               className="w-full"
             />
-            <h1 className="text-lg md:text-xl lg:text-2xl font-sans-serif my-4 text-shadow leading-normal tracking-wider text-center">
-              Dipl. Aromapraktikerin & Dipl. Kräuterpädagogin
+            <h1 className="text-lg md:text-xl lg:text-2xl font-sans-serif mt-2 mb-8 lg:mb-16 text-shadow leading-normal tracking-wider text-center">
+              Dipl. Aromapraktikerin &<br /> Dipl. Kräuterpädagogin
             </h1>
             <div className="flex flex-column xl:flex-row items-center justify-between py-5">
               <Button.PrimaryWithPageScroll

@@ -40,7 +40,7 @@ export default () => (
         return (
           <React.Fragment>
             <Fade bottom>
-              <Headline Type="h2" colorClassname="text-primary" fontStylesClassname="font-handwritten">
+              <Headline Type="h2" colorClassname="text-primary">
                 Ausbildungen und Diplome
               </Headline>
               <div className="lg:grid grid-cols-2 gap-8">
@@ -55,7 +55,7 @@ export default () => (
                       />
                     <Paragraph>{education.description}</Paragraph>
                     <div className="font-sans-serif mt-8 bg-primary text-near-white p-4 rounded-lg">
-                      <span className="font-bold block text-center">Schwerpunkte</span>
+                      <span className="font-extrabold text-2xl block text-center">Schwerpunkte</span>
                       <UnorderedList>
                         {education.mainEmphasis.map((emphasis) => (
                           <ListItem className="leading-normal lg:leading-loose" key={emphasis}>{emphasis}</ListItem>

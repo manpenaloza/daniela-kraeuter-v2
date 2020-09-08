@@ -5,7 +5,6 @@ export default ({
   children,
   Type = "h2",
   colorClassname = "text-mid-gray",
-  fontStylesClassname = "font-sans font-bold",
 }) => {
   const dotClassname = `main-headline-dot-${
     colorClassname === "text-secondary" ? "primary" : "secondary"
@@ -13,7 +12,7 @@ export default ({
   return (
     <React.Fragment>
       <Type
-        className={`${colorClassname} ${fontStylesClassname} text-3xl lg:text-5xl leading-none ${dotClassname}`}
+        className={`${colorClassname} font-sans-serif text-3xl lg:text-5xl leading-none ${dotClassname}`}
       >
         {children}
       </Type>

@@ -71,7 +71,7 @@
   top: 0;
   left: 0;
   z-index: 1;
-	background: rgba(232, 149, 117, 0.1);
+	background: rgba(232, 149, 117, 0.15);
 }
 
 .with-blog-post-teaser-overlay::after {
