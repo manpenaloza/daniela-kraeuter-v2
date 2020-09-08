@@ -44,7 +44,9 @@ export default ({ data, location }) => {
       ),
       // upcoming usage of node itself is a dirty hack as contentful ships the <li> contents as a Paragraph, which leads to broken styles
       [BLOCKS.LIST_ITEM]: (node, children) => (
-        <ListItem className="text-lg">{node.content[0]?.content[0]?.value}</ListItem>
+        <ListItem className="text-lg">
+          {node.content[0]?.content[0]?.value}
+        </ListItem>
       ),
     },
   };
@@ -65,6 +67,7 @@ export default ({ data, location }) => {
         date={updatedAt}
         category="Welt der Kräuter und ätherischer Öle"
         title={title}
+        bgImage={introImage.fluid.src}
       />
       <article className="min-vh-100 blog__grid">
         <div style={{ gridArea: "header" }} />
@@ -77,11 +80,7 @@ export default ({ data, location }) => {
             contentfulRichTextRenderOptions
           )}
         </div>
-        <Sidebar
-          img={introImage.fluid.src}
-          desc={metaDescription}
-          location={location.pathname}
-        />
+        <Sidebar desc={metaDescription} location={location.pathname} />
         {/* <Suggested /> */}
       </article>
     </Layout>
