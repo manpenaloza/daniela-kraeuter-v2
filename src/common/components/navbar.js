@@ -53,8 +53,9 @@ const SliderMenu = (props) => {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 960;
-  const isHomepage = typeof window !== 'undefined' && window.location.pathname === "/";
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 960;
+  const isHomepage =
+    typeof window !== "undefined" && window.location.pathname === "/";
 
   const data = useStaticQuery(graphql`
     query {
@@ -118,7 +119,7 @@ const Navbar = () => {
             </MultiLink>
           ))}
         <MultiLink
-          to="mailto:daniela.sohneg@gmail.com"
+          {...(isHomepage ? { scrollToId: "contact" } : { to: "/#contat" })}
           className="text-near-white rounded-lg bg-secondary py-2 px-6  sans-serif ttu color-secondary f5 no-underline dn dib-l cursor-pointer"
         >
           Kontakt
