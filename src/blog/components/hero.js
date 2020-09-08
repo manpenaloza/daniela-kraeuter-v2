@@ -9,7 +9,7 @@ export default (props) => {
       <span className="font-sans-serif uppercase text-sm">
         {props.category}
       </span>
-      <h1 className="text-2xl md:text-4xl lg:text-6xl my-4 lg:my-8">{props.title}</h1>
+      <h1 className="text-2xl md:text-4xl lg:text-6xl my-4 lg:my-8 font-handwritten">{props.title}</h1>
       <span className="sans-serif tracked f6 mb2">verfasst von<br />{props.author.toUpperCase()}</span>
       {/* <span className="sans-serif tracked ttu f6">
         {date.toLocaleDateString("de-DE")}
