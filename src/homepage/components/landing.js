@@ -43,7 +43,7 @@ export default () => {
               className="w-full"
             />
             <h1 className="text-lg md:text-xl lg:text-2xl font-sans-serif mt-2 mb-8 lg:mb-16 text-shadow leading-normal tracking-wider text-center">
-              Dipl. Aromapraktikerin &<br /> Dipl. Kräuterpädagogin
+              Dipl. Aromapraktikerin<br /> Dipl. Kräuterpädagogin
             </h1>
             <div className="flex flex-column xl:flex-row items-center justify-between py-5">
               <Button.PrimaryWithPageScroll
